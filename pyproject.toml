@@ -7,6 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+xxhash = "^3.4.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.3"
