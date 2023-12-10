@@ -19,3 +19,14 @@ def test_should_method_isMaximized_return_False_when_battleList_is_minimized():
     rectImage = RectImage(0, 0, image)
     container = Container(rectImage)
     assert container.isMaximized() == False
+
+
+def test_should_assert_close_button_rect_image():
+    image = load(f'{currentPath}/battleList.png')
+    rectImage = RectImage(0, 0, image)
+    container = Container(rectImage)
+    closeButtonRectImage = container.getCloseButtonRectImage()
+    assert closeButtonRectImage.x == 161
+    assert closeButtonRectImage.y == 2
+    assert closeButtonRectImage.width == 12
+    assert closeButtonRectImage.height == 12
