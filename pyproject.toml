@@ -7,9 +7,12 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-xxhash = "^3.4.1"
-opencv-python = "^4.8.1.78"
 numpy = "^1.26.2"
+opencv-python = "^4.8.1.78"
+xxhash = "^3.4.1"
+
+[tool.poetry.group.dev.dependencies]
+pdoc = "^14.1.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.3"
