@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.12"
 xxhash = "^3.4.1"
 opencv-python = "^4.8.1.78"
+numpy = "^1.26.2"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.3"
