@@ -8,7 +8,7 @@ currentPath = pathlib.Path(__file__).parent.resolve()
 
 
 def test_should_method_isMaximized_return_True_when_battleList_is_maximized():
-    image = load(f'{currentPath}/battleListMaximized.png')
+    image = load(f'{currentPath}/battleList.png')
     rectImage = RectImage(0, 0, image)
     container = Container(rectImage)
     assert container.isMaximized() == True
