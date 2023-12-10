@@ -1,4 +1,4 @@
-class BBox:
+class RectImage:
     x: int
     y: int
     width: int
