@@ -3,13 +3,11 @@ import numpy as np
 from PIL import Image
 
 
-# TODO: add return type
-def load(path: str):
+def load(path: str) -> np.ndarray:
     bgraImage = cv2.imread(path)
     return np.array(bgraImage, dtype=np.uint8)
 
 
-# TODO: add parameter type
-def save(arr, name: str):
+def save(arr: np.ndarray, name: str):
     im = Image.fromarray(arr)
     im.save(name)
