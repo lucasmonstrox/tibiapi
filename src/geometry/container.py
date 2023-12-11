@@ -11,13 +11,13 @@ class Container:
         """
         Retrieve the bounding rectangle image of the close button in a specific container.
         """
-        return RectImage(self.rectImage.x + 161, self.rectImage.y + 2, self.rectImage.image[2:14, 161:173])
+        return RectImage.makeFromRectImage(self.rectImage, 161, 2, 12, 12)
 
     def getMaximizeOrMinimizeButtonRectImage(self) -> RectImage:
         """
         Retrieve the bounding rectangle image of the maximize or minimize button.
         """
-        return RectImage(self.rectImage.x + 149, self.rectImage.y + 2, self.rectImage.image[2:14, 149:161])
+        return RectImage.makeFromRectImage(self.rectImage, 149, 2, 12, 12)
 
     def isMaximized(self) -> bool:
         """
