@@ -17,7 +17,7 @@ class Container:
         """
         Retrieve the bounding rectangle image of the maximize or minimize button.
         """
-        return RectImage(self.rectImage.x + 161, self.rectImage.y + 2, self.rectImage.image[2:14, 161:173])
+        return RectImage(self.rectImage.x + 149, self.rectImage.y + 2, self.rectImage.image[2:14, 149:161])
 
     def isMaximized(self) -> bool:
         """
