@@ -15,4 +15,4 @@ class RectImage:
 
     @staticmethod
     def makeFromRectImage(rectImage, x, y, width, height):
-        return RectImage(x, y, rectImage.image[y:y + height, x: x + width])
+        return RectImage(rectImage.x + x, rectImage.y + y, rectImage.image[y:y + height, x: x + width])
