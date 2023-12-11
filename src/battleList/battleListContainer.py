@@ -1,6 +1,7 @@
 from functools import cached_property
 from src.geometry.container import Container
 from src.geometry.rectImage import RectImage
+from ..geometry.factories.rectImage import makeFromRectImage
 
 
 class BattleListContainer:
@@ -11,7 +12,7 @@ class BattleListContainer:
 
     @cached_property
     def configureCreaturesButton(self) -> RectImage:
-        return RectImage.makeFromRectImage(self.container.rectImage, 133, 2, 12, 12)
+        return makeFromRectImage(self.container.rectImage, 133, 2, 12, 12)
 
     @cached_property
     def hidePlayersButton(self) -> RectImage | None:
@@ -19,7 +20,7 @@ class BattleListContainer:
             return None
         if not self.isConfiguringCreatures:
             return None
-        return RectImage.makeFromRectImage(self.container.rectImage, 23, 17, 20, 20)
+        return makeFromRectImage(self.container.rectImage, 23, 17, 20, 20)
 
     @cached_property
     def hidePlayersButtonIsEnabled(self) -> RectImage | None:

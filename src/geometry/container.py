@@ -1,4 +1,5 @@
 from functools import cached_property
+from .factories.rectImage import makeFromRectImage
 from .rectImage import RectImage
 
 
@@ -13,14 +14,14 @@ class Container:
         """
         Retrieve the bounding rectangle image of the close button in a specific container.
         """
-        return RectImage.makeFromRectImage(self.rectImage, 161, 2, 12, 12)
+        return makeFromRectImage(self.rectImage, 161, 2, 12, 12)
 
     @cached_property
     def maximizeOrMinimizeButton(self) -> RectImage:
         """
         Retrieve the bounding rectangle image of the maximize or minimize button.
         """
-        return RectImage.makeFromRectImage(self.rectImage, 149, 2, 12, 12)
+        return makeFromRectImage(self.rectImage, 149, 2, 12, 12)
 
     @cached_property
     def isMaximized(self) -> bool:

@@ -14,7 +14,3 @@ class RectImage:
         self.width = len(image[0])
         self.height = len(image)
         self.image = image
-
-    @staticmethod
-    def makeFromRectImage(rectImage: np.ndarray, x: int, y: int, width: int, height: int):
-        return RectImage(rectImage.x + x, rectImage.y + y, rectImage.image[y:y + height, x: x + width])
