@@ -1,6 +1,11 @@
 import cv2
 import numpy as np
 from PIL import Image
+import xxhash
+
+
+def hashit(arr: np.ndarray) -> int:
+    return xxhash.xxh64(np.ascontiguousarray(arr), seed=20220605).intdigest()
 
 
 def load(path: str) -> np.ndarray:
