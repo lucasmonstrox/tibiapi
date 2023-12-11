@@ -12,3 +12,7 @@ class RectImage:
         self.width = len(image[0])
         self.height = len(image)
         self.image = image
+
+    @staticmethod
+    def makeFromRectImage(rectImage, x, y, width, height):
+        return RectImage(x, y, rectImage.image[y:y + height, x: x + width])
