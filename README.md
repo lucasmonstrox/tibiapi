@@ -19,7 +19,9 @@
 | SpellList  | ❌   |
 | VIPList    | ❌   |
 
-# Prerequisites
+# 🧰 Installation
+
+## Prerequisites
 
 - [`Python`](https://www.python.org/downloads/release/python-3913) 3.12.1
 - [`Poetry`](https://python-poetry.org/docs/#installation) >=1.7.1
@@ -30,15 +32,13 @@ Install packages before continue
 poetry install
 ```
 
-# 🧪 Running tests
+# ⌨ Development
+
+## 🧪 Running tests
 
 ```bash
 poetry run python -m pytest
 ```
-
-# ✅ TODO
-
-...
 
 # 👷 Authors
 
