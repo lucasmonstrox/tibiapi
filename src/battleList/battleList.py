@@ -1,7 +1,6 @@
 from functools import cached_property
-from ..geometry.container import Container
-from ..geometry.rectImage import RectImage
-from ..geometry.factories.rectImage import makeFromRectImage
+from .._common.container import Container
+from .._common.rectImage import makeFromRectImage, RectImage
 
 
 class BattleList:

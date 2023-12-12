@@ -1,5 +1,5 @@
 import pathlib
-from src.geometry.rectImage import RectImage
+from src._common.rectImage import RectImage
 from src.utils.image import load
 
 

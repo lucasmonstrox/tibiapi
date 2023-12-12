@@ -1,7 +1,7 @@
 import numpy as np
 import pathlib
-from src.battleList.battleList import BattleList
-from src.geometry.rectImage import RectImage
+from src._common.rectImage import RectImage
+from src.battleList import BattleList
 from src.utils.image import load
 
 

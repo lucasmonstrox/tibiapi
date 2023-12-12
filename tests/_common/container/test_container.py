@@ -1,6 +1,6 @@
 import pathlib
-from src.geometry.container import Container
-from src.geometry.rectImage import RectImage
+from src._common.container import Container
+from src._common.rectImage import RectImage
 from src.utils.image import load
 
 

@@ -1,6 +1,5 @@
 from functools import cached_property
-from .factories.rectImage import makeFromRectImage
-from .rectImage import RectImage
+from ..rectImage import makeFromRectImage, RectImage
 
 
 class Container:
