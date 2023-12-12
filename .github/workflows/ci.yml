@@ -1,0 +1,13 @@
+name: CI
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.12.1
+      - name: Unit tests
+        run: poetry run python -m pytest .
