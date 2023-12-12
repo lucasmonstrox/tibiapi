@@ -28,7 +28,6 @@ def test_should_method_isConfiguringCreatures_return_True_when_configuring_creat
     battleList = BattleList(rectImage)
     assert battleList.isConfiguringCreatures == True
 
-
 def test_should_method_isConfiguringCreatures_return_False_when_configuring_creatures_is_not_shown():
     image = load(f'{currentPath}/battleListNotConfiguring.png')
     rectImage = RectImage(0, 0, image)
