@@ -9,14 +9,14 @@ currentPath = pathlib.Path(__file__).parent.resolve()
 
 
 def test_should_match_configure_creatures_button_image():
-    battleListNotConfiguringImage = load(f'{currentPath}/battleListNotConfiguring.png')
+    battleListNotConfiguringImage = load(f'{currentPath}/images/battleListNotConfiguring.png')
     battleListRectImage = RectImage(0, 0, battleListNotConfiguringImage)
     battleList = BattleList(battleListRectImage)
     configureCreaturesButton = load('src/battleList/images/buttons/configureCreatures.png')
     np.testing.assert_array_equal(battleList.configureCreaturesButton.image, configureCreaturesButton)
 
 def test_should_match_configure_creatures_button_pressed_image():
-    battleListConfiguringImage = load(f'{currentPath}/battleListConfiguring.png')
+    battleListConfiguringImage = load(f'{currentPath}/images/battleListConfiguring.png')
     battleListRectImage = RectImage(0, 0, battleListConfiguringImage)
     battleList = BattleList(battleListRectImage)
     configureCreaturesButton = load('src/battleList/images/buttons/configureCreaturesPressed.png')
