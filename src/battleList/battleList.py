@@ -15,7 +15,7 @@ class BattleList:
         return makeFromRectImage(self.container.rectImage, 133, 2, 12, 12)
 
     @cached_property
-    def hidePlayersButton(self) -> RectImage | None:
+    def togglePlayersButton(self) -> RectImage | None:
         if not self.container.isMaximized:
             return None
         if not self.isConfiguringCreatures:
