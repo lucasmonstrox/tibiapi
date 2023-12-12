@@ -4,7 +4,7 @@ from src.geometry.rectImage import RectImage
 from ..geometry.factories.rectImage import makeFromRectImage
 
 
-class BattleListContainer:
+class BattleList:
     container: Container
 
     def __init__(self, rectImage: RectImage):
