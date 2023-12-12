@@ -40,6 +40,12 @@ poetry install
 poetry run python -m pytest
 ```
 
+# ✅ TODO
+
+- configure mypy
+- add documentation(mkdocs, pydoc, etc)
+- add benchmark tests
+
 # 👷 Authors
 
 - [**lucasmonstrox**](http://github.com/lucasmonstrox)([**linkedin**](https://www.linkedin.com/in/lucasmonstrox/)) - Owner & Developer
