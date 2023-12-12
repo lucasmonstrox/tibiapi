@@ -45,6 +45,7 @@ poetry run python -m pytest
 - configure mypy
 - add documentation(mkdocs, pydoc, etc)
 - add benchmark tests
+- create wiki or deploy to readthedocs
 
 # 👷 Authors
 
