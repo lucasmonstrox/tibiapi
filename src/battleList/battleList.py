@@ -1,6 +1,6 @@
 from functools import cached_property
-from src.geometry.container import Container
-from src.geometry.rectImage import RectImage
+from ..geometry.container import Container
+from ..geometry.rectImage import RectImage
 from ..geometry.factories.rectImage import makeFromRectImage
 
 
