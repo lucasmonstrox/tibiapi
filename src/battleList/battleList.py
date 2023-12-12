@@ -23,7 +23,7 @@ class BattleList:
         return makeFromRectImage(self.container.rectImage, 23, 17, 20, 20)
 
     @cached_property
-    def hidePlayersButtonIsEnabled(self) -> RectImage | None:
+    def hidePlayersButtonIsEnabled(self) -> bool:
         if self.hidePlayersButton is None:
             return False
         pixel = self.hidePlayersButton.image[0, 0]
