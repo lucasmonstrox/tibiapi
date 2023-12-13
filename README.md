@@ -23,7 +23,7 @@
 
 ## Prerequisites
 
-- [`Python`](https://www.python.org/downloads/release/python-3121) 3.12.1
+- [`Python`](https://www.python.org/downloads/release/python-3117) 3.11.7
 - [`Poetry`](https://python-poetry.org/docs/#installation) >=1.7.1
 
 Install packages before continue
