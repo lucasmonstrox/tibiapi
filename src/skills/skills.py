@@ -1,3 +1,7 @@
 class Skills:
-    hpPercentage: int
-    manaPercentage: int
+    cap: int
+    food: int
+    hp: int
+    mana: int
+    speed: int
+    stamina: int
