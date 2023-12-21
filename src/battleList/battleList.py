@@ -27,10 +27,10 @@ class BattleList:
             return None
         if self.creaturesCount == 0:
             return []
-        getCreaturesNamesImagesIter = getCreaturesNamesImages(
+        creaturesNamesImages = getCreaturesNamesImages(
             self.innerContent, self.creaturesCount)
         return [creaturesNamesImagesHashes.get(
-            hashit(creatureNameImage), 'Unknonwn') for creatureNameImage in getCreaturesNamesImagesIter]
+            hashit(creatureNameImage), 'Unknonwn') for creatureNameImage in creaturesNamesImages]
 
     @cached_property
     def creaturesCount(self) -> int:
