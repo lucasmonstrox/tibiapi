@@ -7,11 +7,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+cityhash = "^0.4.7"
 numba = "^0.58.1"
 numpy = "^1.26.2"
 opencv-python = "^4.8.1.78"
 pillow = "^10.1.0"
-xxhash = "^3.4.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.3"
