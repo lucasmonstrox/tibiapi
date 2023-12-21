@@ -12,6 +12,6 @@ creaturesNamesImagesHashes = {}
 for creatureName in creatures:
     creatureNameImage = load(
         f'{monstersPath}/{creatureName}.png')
-    creatureNameImage = np.ravel(creatureNameImage[8:9, 0:115])
+    creatureNameImage = np.ravel(creatureNameImage[8:9, 0:115][:, :, 0])
     creatureNameImageHash = hashit(creatureNameImage)
     creaturesNamesImagesHashes[creatureNameImageHash] = creatureName
