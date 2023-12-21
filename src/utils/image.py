@@ -10,7 +10,7 @@ def hashit(arr: np.ndarray) -> int:
 
 def load(path: str) -> np.ndarray:
     bgraImage = cv2.imread(path)
-    return np.array(bgraImage, dtype=np.uint8)
+    return np.ascontiguousarray(bgraImage, dtype=np.uint8)
 
 
 def save(arr: np.ndarray, name: str):
