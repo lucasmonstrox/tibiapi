@@ -17,6 +17,7 @@
 | PartyList  | ❌   |
 | Skills     | ❌   |
 | SpellList  | ❌   |
+| StatusBar  | ✔️   |
 | VIPList    | ❌   |
 
 # 🧰 Installation
