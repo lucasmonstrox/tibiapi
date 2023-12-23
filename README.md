@@ -7,6 +7,7 @@
 | Features   | Done |
 | ---------- | ---- |
 | ActionBar  | ❌   |
+| Analytics  | ❌   |
 | BattleList | 🚧   |
 | Chat       | ❌   |
 | GameWindow | ❌   |
