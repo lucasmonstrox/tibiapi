@@ -5,3 +5,12 @@ class Skills:
     mana: int
     speed: int
     stamina: int
+    offlineTraining: int
+    magic: int
+    fist: int
+    club: int
+    sword: int
+    axe: int
+    distance: int
+    shielding: int
+    fishing: int
