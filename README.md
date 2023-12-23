@@ -19,6 +19,7 @@
 | Skills     | ❌   |
 | SpellList  | ❌   |
 | StatusBar  | ✔️   |
+| Store      | ❌   |
 | VIPList    | ❌   |
 
 # 🧰 Installation
