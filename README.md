@@ -12,6 +12,7 @@
 | GameWindow | ❌   |
 | Imbuements | ❌   |
 | Inventory  | ❌   |
+| Market     | ❌   |
 | Minimap    | ❌   |
 | Options    | ❌   |
 | PartyList  | ❌   |
