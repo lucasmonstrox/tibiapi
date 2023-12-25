@@ -1,6 +1,7 @@
 class Creature:
     name: str
     healthPercentage: int
+    isAttackingPlayer: bool
     isBeingAttacked: bool
     isUnderRoof: bool
     coordinate: tuple[int, int, int]
