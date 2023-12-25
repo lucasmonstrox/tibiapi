@@ -23,6 +23,7 @@ class Skills:
     def __init__(self, rectImage: RectImage):
         self.container = Container(rectImage)
 
+    # TODO: calculate thousand number when comma is present
     def getLevel(self) -> int:
         image = self.container.rectImage.image[26:34, :][:, :, 0]
         thousandNumberImage = image[:, 104:126]
