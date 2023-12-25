@@ -1,3 +1,4 @@
+from typing import Optional
 from src._common.rectImage.rectImage import RectImage
 from .slot import Slot
 
@@ -8,8 +9,8 @@ class ActionBar:
     previousButton: RectImage
     nextButton: RectImage
 
-    def getSlotByIndex(self, index: int) -> Slot | None:
+    def getSlotByIndex(self, index: int) -> Optional[Slot]:
         return None
 
-    def getSlotByHotkey(self, hotkey: str) -> Slot | None:
+    def getSlotByHotkey(self, hotkey: str) -> Optional[Slot]:
         return None

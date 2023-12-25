@@ -1,5 +1,6 @@
 from functools import cached_property
 import numpy as np
+from typing import Optional
 from .._common.container import Container
 from .._common.rectImage import makeFromRectImage, RectImage
 from ..utils.image import hashit
@@ -15,14 +16,14 @@ class BattleList:
         self.container = Container(rectImage, topBarClass=TopBar)
 
     @cached_property
-    def innerContent(self) -> np.ndarray | None:
+    def innerContent(self) -> Optional[np.ndarray]:
         if not self.container.isMaximized:
             return None
         y = 63 if self.isConfiguringCreatures else 15
         return self.container.rectImage.image[y:self.container.rectImage.y - 11, 4:159][:, :, 0]
 
     @cached_property
-    def creatures(self) -> list[str] | None:
+    def creatures(self) -> Optional[list[str]]:
         if not self.container.isMaximized:
             return None
         if self.creaturesCount == 0:
@@ -37,7 +38,7 @@ class BattleList:
         return creaturesCount(self.innerContent)
 
     @cached_property
-    def togglePlayersButton(self) -> RectImage | None:
+    def togglePlayersButton(self) -> Optional[RectImage]:
         if not self.container.isMaximized:
             return None
         if not self.isConfiguringCreatures:

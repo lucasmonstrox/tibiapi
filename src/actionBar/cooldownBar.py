@@ -1,9 +1,10 @@
+from typing import Optional
 from .cooldown import Cooldown
 
 
 class CooldownBar:
-    def getCooldownByIndex(self, index: int) -> Cooldown | None:
+    def getCooldownByIndex(self, index: int) -> Optional[Cooldown]:
         return None
 
-    def getCooldownByName(self, name: str) -> Cooldown | None:
+    def getCooldownByName(self, name: str) -> Optional[Cooldown]:
         return None

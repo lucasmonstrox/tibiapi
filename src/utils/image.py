@@ -2,6 +2,7 @@ import cv2
 from farmhash import FarmHash64
 import numpy as np
 from PIL import Image
+from typing import Optional
 
 
 def hashit(arr: np.ndarray) -> int:
@@ -15,7 +16,7 @@ def load(path: str) -> np.ndarray:
     return np.ascontiguousarray(bgraImage, dtype=np.uint8)
 
 
-def locate(compareImage: np.ndarray, img: np.ndarray, confidence: float = 0.85) -> tuple[int, int, int, int] | None:
+def locate(compareImage: np.ndarray, img: np.ndarray, confidence: float = 0.85) -> Optional[tuple[int, int, int, int]]:
     match = cv2.matchTemplate(compareImage, img, cv2.TM_CCOEFF_NORMED)
     res = cv2.minMaxLoc(match)
     if res[1] <= confidence:

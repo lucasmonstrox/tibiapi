@@ -1,13 +1,16 @@
+from typing import Optional
+
+
 class Inventory:
     mainBackpack: str
-    amulet: str | None
-    ring: str | None
-    helmet: str | None
-    weapon: str | None
-    armor: str | None
-    shield: str | None
-    legs: str | None
-    boots: str | None
+    amulet: Optional[str]
+    ring: Optional[str]
+    helmet: Optional[str]
+    weapon: Optional[str]
+    armor: Optional[str]
+    shield: Optional[str]
+    legs: Optional[str]
+    boots: Optional[str]
 
     def isMainBackpackEquipped(self) -> bool:
         return True
