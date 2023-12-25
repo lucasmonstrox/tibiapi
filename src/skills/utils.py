@@ -14,7 +14,7 @@ def cleanBackgroundGrayPixels(image: np.ndarray) -> np.ndarray:
     return zeros
 
 
-def getNumberByImage(number_image: np.ndarray) -> int:
-    numberImage = cleanBackgroundGrayPixels(number_image)
+def getNumberByImage(numberImage: np.ndarray) -> int:
+    numberImage = cleanBackgroundGrayPixels(numberImage)
     numberImageHAsh = hashit(numberImage)
     return numbersImagesHashes.get(numberImageHAsh, 0)
