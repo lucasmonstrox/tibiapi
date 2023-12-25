@@ -5,7 +5,9 @@ from PIL import Image
 
 
 def hashit(arr: np.ndarray) -> int:
-    return FarmHash64(arr)
+    if arr.flags['C_CONTIGUOUS']:
+        return FarmHash64(arr)
+    return FarmHash64(np.ascontiguousarray(arr))
 
 
 def load(path: str) -> np.ndarray:
