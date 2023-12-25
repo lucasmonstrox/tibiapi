@@ -15,7 +15,7 @@ def getCreaturesNamesImages(content: np.ndarray, filledSlotsCount: int) -> np.nd
 
 
 @njit(cache=True, fastmath=True)
-def creaturesCount(innerContent) -> int:
+def creaturesCount(innerContent: np.ndarray) -> int:
     creaturesCount = 0
     possibleCreaturesCount = len(innerContent) // 22
     for i in range(possibleCreaturesCount):
