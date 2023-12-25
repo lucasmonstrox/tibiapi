@@ -17,7 +17,7 @@
 | Minimap    | ❌   |
 | Options    | ❌   |
 | PartyList  | ❌   |
-| Skills     | ❌   |
+| Skills     | 🚧   |
 | SpellList  | ❌   |
 | StatusBar  | ✔️   |
 | Store      | ❌   |
