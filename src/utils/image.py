@@ -6,9 +6,7 @@ from typing import Optional
 
 
 def hashit(arr: np.ndarray) -> int:
-    if arr.flags['C_CONTIGUOUS']:
-        return FarmHash64(arr)
-    return FarmHash64(np.ascontiguousarray(arr))
+    return FarmHash64(arr)
 
 
 def load(path: str) -> np.ndarray:
