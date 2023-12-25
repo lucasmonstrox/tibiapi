@@ -1,6 +1,6 @@
 from functools import cached_property
 import numpy as np
-from typing import Optional
+from typing import List, Optional
 from .._common.container import Container
 from .._common.rectImage import makeFromRectImage, RectImage
 from ..utils.image import hashit
@@ -23,7 +23,7 @@ class BattleList:
         return self.container.rectImage.image[y:self.container.rectImage.y - 11, 4:159][:, :, 0]
 
     @cached_property
-    def creatures(self) -> Optional[list[str]]:
+    def creatures(self) -> Optional[List[str]]:
         if not self.container.isMaximized:
             return None
         if self.creaturesCount == 0:
@@ -31,7 +31,7 @@ class BattleList:
         creaturesNamesImages = getCreaturesNamesImages(
             self.innerContent, self.creaturesCount)
         return [creaturesNamesImagesHashes.get(
-            hashit(creatureNameImage), 'Unknonwn') for creatureNameImage in creaturesNamesImages]
+            hashit(creatureNameImage), 'Unknown') for creatureNameImage in creaturesNamesImages]
 
     @cached_property
     def creaturesCount(self) -> int:

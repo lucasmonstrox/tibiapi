@@ -1,8 +1,8 @@
-from typing import Optional
+from typing import List, Optional
 from .creature import Creature
 
 
 class GameWindow:
-    creatures: list[Creature]
+    creatures: List[Creature]
     closestCreature: Optional[Creature]
     targetCreature: Optional[Creature]

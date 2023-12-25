@@ -1,3 +1,4 @@
+from typing import List
 from .message import Message
 
 
@@ -8,5 +9,5 @@ class Tab:
     def hasNewMessages(self) -> bool:
         return True
 
-    def visibleMessages(self) -> list[Message]:
+    def visibleMessages(self) -> List[Message]:
         return []
