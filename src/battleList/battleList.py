@@ -1,9 +1,10 @@
 from functools import cached_property
 import numpy as np
 from typing import List, Optional
-from .._common.container import Container
-from .._common.rectImage import makeFromRectImage, RectImage
-from ..utils.image import hashit
+from src._common.container import Container
+from src._common.rectImage import makeFromRectImage, RectImage
+from src.utils.color import isPixelColor
+from src.utils.image import hashit
 from .config import creaturesNamesImagesHashes
 from .topBar import TopBar
 from .utils import creaturesCount, getCreaturesNamesImages
@@ -50,9 +51,9 @@ class BattleList:
         if self.hidePlayersButton is None:
             return False
         pixel = self.hidePlayersButton.image[0, 0]
-        return pixel[0] == 41 and pixel[1] == 41 and pixel[2] == 41
+        return isPixelColor(pixel, (41, 41, 41))
 
     @cached_property
     def isConfiguringCreatures(self) -> bool:
         pixel = self.container.topBar.configureCreaturesButton.image[0, 0]
-        return pixel[0] == 28 and pixel[1] == 28 and pixel[2] == 28
+        return isPixelColor(pixel, (28, 28, 28))
