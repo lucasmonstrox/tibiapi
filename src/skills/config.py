@@ -41,3 +41,16 @@ for number in range(1000):
     numberAsImg = np.array(numberAsImg, dtype=np.uint8)
     hashKey = hashit(numberAsImg)
     numbersImagesHashes[hashKey] = number
+    if not hasDecimalDigit:
+        decimalDigitImage = images['digits'][0][:, :, 0]
+        numberAsImg[:, 22 - 14:22 - 14 + 6] = decimalDigitImage
+        numberAsImg[:, 0:6] = decimalDigitImage
+        numberAsImg = np.array(numberAsImg, dtype=np.uint8)
+        hashKey = hashit(numberAsImg)
+        numbersImagesHashes[hashKey] = number
+    elif not hasHundredDigit:
+        decimalDigitImage = images['digits'][0][:, :, 0]
+        numberAsImg[:, 0:6] = decimalDigitImage
+        numberAsImg = np.array(numberAsImg, dtype=np.uint8)
+        hashKey = hashit(numberAsImg)
+        numbersImagesHashes[hashKey] = number
