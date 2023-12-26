@@ -1,5 +1,6 @@
 from src._common.container import Container
 from src._common.rectImage import RectImage
+from src.utils.color import isPixelColor
 from .utils import getNumberByImage
 
 
@@ -32,3 +33,6 @@ class Skills:
         hundredNumber = getNumberByImage(hundredNumberImage)
         number = thousandNumber + hundredNumber
         return number
+
+    def levelPercentageBarIsOpen(self) -> bool:
+        return isPixelColor(self.container.rectImage.image[36, 9], (0, 0, 0))
