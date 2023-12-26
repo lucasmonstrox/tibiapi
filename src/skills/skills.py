@@ -36,3 +36,17 @@ class Skills:
 
     def levelPercentageBarIsOpen(self) -> bool:
         return isPixelColor(self.container.rectImage.image[36, 9], (0, 0, 0))
+
+    def getXp(self) -> int:
+        y = 47 if self.levelPercentageBarIsOpen() else 40
+        image = self.container.rectImage.image[y:y + 8, :][:, :, 0]
+        hundredNumberImage = image[:, 132:154]
+        hundredNumber = getNumberByImage(hundredNumberImage)
+        thousandNumberImage = image[:, 104:126]
+        thousandNumber = getNumberByImage(thousandNumberImage) * 1000
+        millionNumberImage = image[:, 76:98]
+        millionNumber = getNumberByImage(millionNumberImage) * 1000000
+        billionNumberImage = image[:, 48:70]
+        billionNumber = getNumberByImage(billionNumberImage) * 1000000000
+        number = thousandNumber + hundredNumber + millionNumber + billionNumber
+        return number
