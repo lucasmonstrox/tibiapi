@@ -27,6 +27,8 @@ class Skills:
 
     # TODO: calculate thousand number when comma is present
     def getLevel(self) -> Optional[int]:
+        if not self.container.isMaximized:
+            return None
         image = self.container.rectImage.image[26:34, :][:, :, 0]
         thousandNumberImage = image[:, 104:126]
         hundredNumberImage = image[:, 132:154]
@@ -36,9 +38,13 @@ class Skills:
         return number
 
     def levelPercentageBarIsOpen(self) -> Optional[bool]:
+        if not self.container.isMaximized:
+            return None
         return isPixelColor(self.container.rectImage.image[36, 9], (0, 0, 0))
 
     def getXp(self) -> Optional[int]:
+        if not self.container.isMaximized:
+            return None
         y = 47 if self.levelPercentageBarIsOpen() else 40
         image = self.container.rectImage.image[y:y + 8, :][:, :, 0]
         hundredNumberImage = image[:, 132:154]
