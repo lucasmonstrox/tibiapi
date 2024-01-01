@@ -1,10 +1,7 @@
 import math
 from numba import njit, typed, types
 import numpy as np
-import pathlib
 from typing import Dict, List
-from src.utils.image import load
-from src.wiki.creatures import creatures as wikiCreatures
 
 
 @njit(cache=True, boundscheck=False)
