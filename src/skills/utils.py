@@ -4,7 +4,7 @@ from src.utils.image import hashit
 from .config import numbersImagesHashes
 
 
-@njit(cache=True)
+@njit(cache=True, boundscheck=False)
 def cleanBackgroundGrayPixels(image: np.ndarray) -> np.ndarray:
     zeros = np.zeros((8, 22), dtype=np.uint8)
     for y in range(len(image)):
