@@ -10,7 +10,7 @@
 | Analytics  | ❌   |
 | BattleList | 🚧   |
 | Chat       | ❌   |
-| GameWindow | ❌   |
+| GameWindow | 🚧   |
 | Imbuements | ❌   |
 | Inventory  | ❌   |
 | Market     | ❌   |
