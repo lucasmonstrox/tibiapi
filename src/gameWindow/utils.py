@@ -7,14 +7,6 @@ from src.utils.image import load
 from src.wiki.creatures import creatures as wikiCreatures
 
 
-currentPath = pathlib.Path(__file__).parent.resolve()
-creaturesNamesHashes = typed.Dict.empty(
-    key_type=types.unicode_type, value_type=types.uint8[:, :, :])
-for creature in wikiCreatures:
-    creaturesNamesHashes[creature] = load(
-        f'{currentPath}/images/monsters/{creature}.png')
-
-
 @njit(cache=True, boundscheck=False)
 def creatureImagesAreSimilar(matrix: np.ndarray, other: np.ndarray) -> bool:
     for y in range(matrix.shape[0]):
