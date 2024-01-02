@@ -1,4 +1,5 @@
 from typing import List
 
 
-CreatureList = List[str]
+CreatureName = str
+CreatureList = List[CreatureName]
