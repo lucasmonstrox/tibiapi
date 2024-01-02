@@ -29,16 +29,16 @@ def getCreaturesBars(gameWindowImage: np.ndarray) -> List[tuple[int, int]]:
         x = -1
         while x < width:
             x += 1
-            if isBlack(gameWindowImage[y][x + 26]) == False:
+            if isBlack(gameWindowImage[y, x + 26]) == False:
                 x += 26
                 continue
-            if isBlack(gameWindowImage[y][x]) == False:
+            if isBlack(gameWindowImage[y, x]) == False:
                 continue
             bothBordersAreBlack = True
             for l in range(25):
                 if (
-                    isBlack(gameWindowImage[y][x + 25 - l]) == False or
-                    isBlack(gameWindowImage[y + 3][x + 25 - l]) == False
+                    isBlack(gameWindowImage[y, x + 25 - l]) == False or
+                    isBlack(gameWindowImage[y + 3, x + 25 - l]) == False
                 ):
                     bothBordersAreBlack = False
                     x += 25 - l
@@ -46,10 +46,10 @@ def getCreaturesBars(gameWindowImage: np.ndarray) -> List[tuple[int, int]]:
             if bothBordersAreBlack == False:
                 continue
             if (
-                isBlack(gameWindowImage[y + 1][x]) == False or
-                isBlack(gameWindowImage[y + 2][x]) == False or
-                isBlack(gameWindowImage[y + 1][x + 26]) == False or
-                isBlack(gameWindowImage[y + 2][x + 26]) == False
+                isBlack(gameWindowImage[y + 1, x]) == False or
+                isBlack(gameWindowImage[y + 2, x]) == False or
+                isBlack(gameWindowImage[y + 1, x + 26]) == False or
+                isBlack(gameWindowImage[y + 2, x + 26]) == False
             ):
                 continue
             bars[creatureIndex] = (x, y)
