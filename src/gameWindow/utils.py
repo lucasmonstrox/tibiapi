@@ -65,7 +65,6 @@ def getCreatures(battleListCreatures: List[str], creaturesBars: List[tuple[int, 
         # using this hack tell numba the correct return type, this will return an empty array
         return [('Unknown', 'unknown', (creatureBar[0], creatureBar[1])) for creatureBar in creaturesBars]
     if numberOfCreaturesBars == 1:
-        # TODO: corrigir aqui o monster|unknown
         return [(battleListCreatures[0], 'monster', (creaturesBars[0][0], creaturesBars[0][1]))]
     creaturesCategories = {creature: battleListCreatures.count(
         creature) for creature in set(battleListCreatures)}
@@ -83,11 +82,10 @@ def getCreatures(battleListCreatures: List[str], creaturesBars: List[tuple[int, 
     sqrt = np.array([
         math.sqrt(((creatureBar[0] - x) ** 2) + ((creatureBar[1] - y) ** 2)) for creatureBar in creaturesBars], dtype=np.float64)
     creaturesBarsSortedIndexes = np.argsort(sqrt, kind='mergesort')
-    creaturesBars = [creaturesBars[creatureBarIndex]
+    creaturesBars = [(creaturesBars[creatureBarIndex][0], creaturesBars[creatureBarIndex][1])
                      for creatureBarIndex in creaturesBarsSortedIndexes]
     creatureIndex = 0
-    alreadyAssertedCreatures = typed.Dict.empty(
-        key_type=types.string, value_type=types.bool_)
+    alreadyAssertedCreatures = set()
     for creatureBar in creaturesBars:
         assertTryouts = 0
         previousCreatureName = ''
@@ -100,29 +98,31 @@ def getCreatures(battleListCreatures: List[str], creaturesBars: List[tuple[int, 
             if (
                 assertTryouts > 0 and
                 creatureName != previousCreatureName and
-                alreadyAssertedCreatures.get(creatureName, None) is not None
+                creatureName in alreadyAssertedCreatures
             ):
                 continue
-            creatureNameImg = creaturesNamesImages.get(creatureName)[:, :, 1]
+            creatureNameImg = creaturesNamesImages[creatureName][:, :, 1]
             creatureNameWidth = len(creatureNameImg[0])
-            creatureBarY0 = creatureBar[1] - 13
+            creatureBarX = creatureBar[0]
+            creatureBarY = creatureBar[1]
+            creatureBarY0 = creatureBarY - 13
             creatureBarY1 = creatureBarY0 + 11
             creatureNameImgHalfWidth = math.floor(creatureNameWidth / 2)
             leftDiff = max(creatureNameImgHalfWidth - 13, 0)
-            gapLeft = 0 if creatureBar[0] > leftDiff else leftDiff - \
-                creatureBar[0]
+            gapLeft = 0 if creatureBarX > leftDiff else leftDiff - \
+                creatureBarX
             gapInnerLeft = 0 if creatureNameWidth > 27 else math.ceil(
                 (27 - creatureNameWidth) / 2)
             rightDiff = max(
                 creatureNameWidth - creatureNameImgHalfWidth - 14, 0)
             gapRight = 0 if gameWindowWidth > (
-                creatureBar[0] + 27 + rightDiff) else creatureBar[0] + 27 + rightDiff - gameWindowWidth
+                creatureBarX + 27 + rightDiff) else creatureBarX + 27 + rightDiff - gameWindowWidth
             gapInnerRight = 0 if creatureNameWidth > 27 else math.floor(
                 (27 - creatureNameWidth) / 2)
             gg = 13 + gapLeft + gapInnerLeft - gapRight - gapInnerRight
-            startingX = max(0, creatureBar[0] - creatureNameImgHalfWidth + gg)
+            startingX = max(0, creatureBarX - creatureNameImgHalfWidth + gg)
             endingX = min(gameWindowWidth,
-                          creatureBar[0] + creatureNameImgHalfWidth + gg)
+                          creatureBarX + creatureNameImgHalfWidth + gg)
             creatureWithDirtNameImg = gameWindowImage[creatureBarY0:creatureBarY1,
                                                       startingX:endingX]
             if creatureNameWidth != creatureWithDirtNameImg.shape[1]:
@@ -130,10 +130,10 @@ def getCreatures(battleListCreatures: List[str], creaturesBars: List[tuple[int, 
                                                           startingX:endingX + 1]
             if creatureImagesAreSimilar(creatureWithDirtNameImg, creatureNameImg):
                 creatures[creatureIndex] = (
-                    creatureName, 'monster', (creatureBar[0], creatureBar[1]))
+                    creatureName, 'monster', (creatureBarX, creatureBarY))
                 creatureIndex += 1
                 break
-            creatureNameImg2 = creaturesNamesImages.get(creatureName)[:, :, 1]
+            creatureNameImg2 = creaturesNamesImages[creatureName][:, :, 1]
             creatureWithDirtNameImg2 = gameWindowImage[creatureBarY0:creatureBarY1,
                                                        startingX + 1:endingX + 1]
             if creatureNameImg2.shape[1] != creatureWithDirtNameImg2.shape[1]:
@@ -141,23 +141,23 @@ def getCreatures(battleListCreatures: List[str], creaturesBars: List[tuple[int, 
                                                     0:creatureNameImg2.shape[1] - 1]
             if creatureImagesAreSimilar(creatureWithDirtNameImg2, creatureNameImg2):
                 creatures[creatureIndex] = (
-                    creatureName, 'monster', (creatureBar[0], creatureBar[1]))
+                    creatureName, 'monster', (creatureBarX, creatureBarY))
                 creatureIndex += 1
                 break
             creatureWithDirtNameImg3 = gameWindowImage[creatureBarY0:creatureBarY1,
                                                        startingX:endingX - 1]
-            creatureNameImg3 = creaturesNamesImages.get(creatureName)[:, :, 1]
+            creatureNameImg3 = creaturesNamesImages[creatureName][:, :, 1]
             creatureNameImg3 = creatureNameImg3[:, 1:creatureNameImg3.shape[1]]
             if creatureWithDirtNameImg3.shape[1] != creatureNameImg3.shape[1]:
                 creatureNameImg3 = creatureNameImg3[:,
                                                     0:creatureNameImg3.shape[1] - 1]
             if creatureImagesAreSimilar(creatureWithDirtNameImg3, creatureNameImg3):
                 creatures[creatureIndex] = (
-                    creatureName, 'monster', (creatureBar[0], creatureBar[1]))
+                    creatureName, 'monster', (creatureBarX, creatureBarY))
                 creatureIndex += 1
                 break
             assertTryouts += 1
             previousCreatureName = creatureName
-            alreadyAssertedCreatures[creatureName] = True
+            alreadyAssertedCreatures.add(creatureName)
         alreadyAssertedCreatures.clear()
     return creatures
