@@ -1,12 +1,13 @@
 from functools import cached_property
 import numpy as np
-from typing import List, Optional
+from typing import Optional
 from src._common.container import Container
 from src._common.rectImage import makeFromRectImage, RectImage
 from src.utils.color import isPixelColor
 from src.utils.image import hashit
 from .config import creaturesNamesImagesHashes
 from .topBar import TopBar
+from .typings import CreatureList
 from .utils import creaturesCount, getCreaturesNamesImages
 
 
@@ -24,7 +25,7 @@ class BattleList:
         return self.container.rectImage.image[y:self.container.rectImage.y - 11, 4:159][:, :, 0]
 
     @cached_property
-    def creatures(self) -> Optional[List[str]]:
+    def creatures(self) -> Optional[CreatureList]:
         if not self.container.isMaximized:
             return None
         if self.creaturesCount == 0:
