@@ -2,7 +2,7 @@
 name = "tibiapi"
 version = "0.1.0"
 description = ""
-authors = ["lucasmonstro <joao.galiano.silva@gmail.com>"]
+authors = ["lucasmonstrox <joao.galiano.silva@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
