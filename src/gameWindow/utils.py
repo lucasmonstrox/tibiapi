@@ -1,11 +1,14 @@
 import math
-from numba import njit, typed, types
+from numba import njit
 import numpy as np
-from typing import Dict, List
+from typing import Dict
+from src._common.typings import GrayImage, Image, Pixel
+from src.battleList.typings import CreatureList as BattleListCreatures
+from .typings import CreatureList, CreaturesBars
 
 
 @njit(cache=True, boundscheck=False)
-def creatureImagesAreSimilar(matrix: np.ndarray, other: np.ndarray) -> bool:
+def creatureImagesAreSimilar(matrix: Image, other: Image) -> bool:
     for y in range(matrix.shape[0]):
         for x in range(matrix.shape[1]):
             pixel = matrix[y, x]
@@ -15,12 +18,12 @@ def creatureImagesAreSimilar(matrix: np.ndarray, other: np.ndarray) -> bool:
 
 
 @njit(cache=True, boundscheck=False)
-def isBlack(pixel: np.ndarray) -> bool:
+def isBlack(pixel: Pixel) -> bool:
     return pixel[0] == 0 and pixel[1] == 0 and pixel[2] == 0
 
 
 @njit(cache=True, fastmath=True, boundscheck=False)
-def getCreaturesBars(gameWindowImage: np.ndarray) -> List[tuple[int, int]]:
+def getCreaturesBars(gameWindowImage: GrayImage) -> CreaturesBars:
     bars = [(-1, -1)] * 45
     width = len(gameWindowImage[0]) - 27
     height = len(gameWindowImage) - 3
@@ -59,7 +62,7 @@ def getCreaturesBars(gameWindowImage: np.ndarray) -> List[tuple[int, int]]:
 
 
 @njit(cache=True, fastmath=True, boundscheck=False)
-def getCreatures(battleListCreatures: List[str], creaturesBars: List[tuple[int, int]], gameWindowImage: np.ndarray, creaturesNamesImages: Dict[int, str]) -> List[tuple[str, str, tuple[int, int]]]:
+def getCreatures(battleListCreatures: BattleListCreatures, creaturesBars: CreaturesBars, gameWindowImage: GrayImage, creaturesNamesImages: Dict[int, str]) -> CreatureList:
     numberOfCreaturesBars = len(creaturesBars)
     if numberOfCreaturesBars == 0:
         # using this hack tell numba the correct return type, this will return an empty array

@@ -1,15 +1,16 @@
 import cv2
 from farmhash import FarmHash64
 import numpy as np
-from PIL import Image
+from PIL import Image as PilImage
 from typing import Optional
+from src._common.typings import Image
 
 
 def hashit(arr: np.ndarray) -> int:
     return FarmHash64(arr)
 
 
-def load(path: str) -> np.ndarray:
+def load(path: str) -> Image:
     bgraImage = cv2.imread(path)
     return np.ascontiguousarray(bgraImage, dtype=np.uint8)
 
@@ -23,5 +24,5 @@ def locate(compareImage: np.ndarray, img: np.ndarray, confidence: float = 0.85) 
 
 
 def save(arr: np.ndarray, name: str):
-    im = Image.fromarray(arr)
+    im = PilImage.fromarray(arr)
     im.save(name)

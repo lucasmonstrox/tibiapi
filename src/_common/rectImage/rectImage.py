@@ -1,4 +1,4 @@
-import numpy as np
+from ..typings import Image
 
 
 class RectImage:
@@ -6,7 +6,7 @@ class RectImage:
     y: int
     width: int
     height: int
-    image: np.ndarray
+    image: Image
 
     def __init__(self, x: int, y: int, image):
         self.x = x

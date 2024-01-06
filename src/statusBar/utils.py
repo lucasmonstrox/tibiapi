@@ -1,10 +1,10 @@
 from numba import njit
-import numpy as np
+from src._common.typings import Image
 from src.utils.color import isPixelColor
 
 
 @njit(cache=True)
-def healthPercentage(bar: np.ndarray) -> int:
+def healthPercentage(bar: Image) -> int:
     if isPixelColor(bar[93], (49, 46, 100)):
         return 100
     pixelColor = (79, 79, 219)
@@ -32,7 +32,7 @@ def healthPercentage(bar: np.ndarray) -> int:
 
 
 @njit(cache=True)
-def manaPercentage(bar: np.ndarray) -> int:
+def manaPercentage(bar: Image) -> int:
     if isPixelColor(bar[93], (105, 45, 45)):
         return 100
     pixelColor = (218, 80, 83)

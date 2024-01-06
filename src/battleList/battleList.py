@@ -1,8 +1,8 @@
 from functools import cached_property
-import numpy as np
 from typing import Optional
 from src._common.container import Container
 from src._common.rectImage import makeFromRectImage, RectImage
+from src._common.typings import Image
 from src.utils.color import isPixelColor
 from src.utils.image import hashit
 from .config import creaturesNamesImagesHashes
@@ -18,7 +18,7 @@ class BattleList:
         self.container = Container(rectImage, topBarClass=TopBar)
 
     @cached_property
-    def innerContent(self) -> Optional[np.ndarray]:
+    def innerContent(self) -> Optional[Image]:
         if not self.container.isMaximized:
             return None
         y = 63 if self.isConfiguringCreatures else 15
