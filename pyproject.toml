@@ -16,6 +16,12 @@ pillow = "^10.1.0"
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.3"
 
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+mkdocs-material = "^9.5.3"
+mkdocstrings = "^0.24.0"
+mkdocstrings-python = "^1.7.5"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

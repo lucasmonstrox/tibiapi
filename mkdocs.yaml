@@ -1,0 +1,104 @@
+site_name: tibiapi
+site_url: https://tibiapi.readthedocs.io/
+repo_url: https://github.com/lucasmonstrox/tibiapi
+repo_name: lucasmonstrox/tibiapi
+nav:
+  - Getting started:
+      - What is tibiapi?: home/about.md
+      - How it works: home/how-it-works.md
+      - Caveats: home/caveats.md
+      - Requirements: home/requirements.md
+  - Development:
+      - Installation: development/installation.md
+      - Usage: development/usage.md
+      - Contributing:
+          - Bug Report: development/bug-report.md
+          - Requesting a change: development/requesting-change.md
+          - Making a pull request: development/making-pull-request.md
+  - API Reference:
+      - Common:
+          - Container: api/_common/container.md
+          - RectImage: api/_common/rect-image.md
+      - BattleList:
+          - BattleList: api/battle-list/battle-list.md
+          - Creature: api/battle-list/creature.md
+          - TopBar: api/battle-list/top-bar.md
+      - StatusBar:
+          - StatusBar: api/status-bar/status-bar.md
+plugins:
+  - autorefs
+  - search
+  - mkdocstrings:
+      enabled: true
+      default_handler: python
+      enable_inventory: true
+      handlers:
+        python:
+          paths: [src]
+          import:
+            - https://docs.python.org/3/objects.inv
+            - https://installer.readthedocs.io/en/stable/objects.inv
+            - https://mkdocstrings.github.io/autorefs/objects.inv
+          options:
+            allow_inspection: true
+            merge_init_into_class: true
+            separate_signature: true
+            show_bases: true
+            show_if_no_docstring: true
+            show_root_full_path: false
+            show_root_members_full_path: false
+            show_root_toc_entry: true
+            show_signature_annotations: true
+            show_signature: true
+            show_source: true
+            show_root_heading: true
+            signature_crossrefs: true
+  - offline
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: teal
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.code.copy
+    - content.code.select
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.path
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - toc.follow
+markdown_extensions:
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - toc:
+      permalink: '¤'
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lucasmonstrox
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/lucasmonstrox
