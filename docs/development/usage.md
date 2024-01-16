@@ -11,4 +11,4 @@ battleList = BattleList(image)
 battleList.creatures() # will return battle list creatures ['Dragon', 'Dragon Lord']
 ```
 
-You can go to [API reference](/api/battleList/battleList.html) and discover more tibiapi functions.
+You can go to [API reference](../api/battle-list/battle-list.md) and discover more tibiapi functions.
