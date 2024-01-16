@@ -8,7 +8,7 @@ Since detecting objects is not implemented, marking the coordinate as "unwalkabl
 
 ### Invisible creatures
 
-Getting invisible creatures is not possible, but "wiki" module provides which creatures can become invisible at any time, sometimes they appear on the screen and can be attacked in that area with a rune or by a spell when the character is close and blocked by invisible creature.
+Getting invisible creatures is not possible, but "wiki" module provides which creatures can become invisible at any time, sometimes they appear on the screen and can be attacked in that area with [Runes](https://tibia.fandom.com/wiki/Runes) or by [Spells](https://tibia.fandom.com/wiki/Spells) when the character is close and blocked by invisible creature.
 
 ### Players on screen
 
