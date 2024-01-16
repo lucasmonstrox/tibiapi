@@ -4,7 +4,7 @@ About support on Linux, will be added soon.
 
 ## Screen resolution
 
-For now, tibiapi only works in 1080p resolution, but it will soon be adapted to any resolution.
+For now, tibiapi only works in [1080p](https://en.wikipedia.org/wiki/1080p) resolution, but it will soon be adapted to any resolution.
 
 ## Hardware testing
 
@@ -24,7 +24,7 @@ Memory: DDR4 16GB 3200mhz
 
 ### What was the response time for each one?
 
-In a common hunt within 10 creatures:
+In a common hunt within 10 Creatures:
 
 - low end computer will respond in 0.0006 = 600 microseconds, like 1500fps
 - high end computer will respond in 0.00015 = 150 microseconds, like 6500fps
