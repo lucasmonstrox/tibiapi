@@ -1,6 +1,6 @@
-tibiapi has only been tested on Windows 10, but it is likely to work on Windows 11.
+tibiapi has only been tested on [Windows 10](https://en.wikipedia.org/wiki/Windows_10), but it is likely to work on [Windows 11](https://en.wikipedia.org/wiki/Windows_11).
 
-About support on Linux, will be added soon.
+About support on [Linux](https://en.wikipedia.org/wiki/Linux), will be added soon.
 
 ## Screen resolution
 
