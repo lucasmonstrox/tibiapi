@@ -1,6 +1,7 @@
 site_name: tibiapi
 site_url: https://tibiapi.readthedocs.io/
 repo_url: https://github.com/lucasmonstrox/tibiapi
+edit_uri: blob/main/docs/
 repo_name: lucasmonstrox/tibiapi
 nav:
   - Getting started:
