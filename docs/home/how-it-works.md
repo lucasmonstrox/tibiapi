@@ -11,7 +11,7 @@ After using "locate" function, coordinates and dimensions of the object are retu
 
 ## Transforming piece of images into data
 
-Before understanding how small pieces of images are transformed into data, tibiapi uses a hash function to often avoid the [OpenCV](https://opencv.org) match template and excessive [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) usage, this is why many functions have responses between [milliseconds](https://simple.wikipedia.org/wiki/Millisecond) and [nanoseconds](https://en.wikipedia.org/wiki/Nanosecond):
+Before understanding how small pieces of images are transformed into data, tibiapi uses a hash function to implement a [Cache](https://en.wikipedia.org/wiki/Cache_(computing)) mechanism to often avoid the [OpenCV](https://opencv.org) match template and excessive [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) usage, this is why many functions have responses between [milliseconds](https://simple.wikipedia.org/wiki/Millisecond) and [nanoseconds](https://en.wikipedia.org/wiki/Nanosecond):
 
 ```python
 import numpy as np
