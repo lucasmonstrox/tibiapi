@@ -11,7 +11,7 @@ After using "locate" function, coordinates and dimensions of the object are retu
 
 ## Transforming piece of images into data
 
-Before understanding how small pieces of images are transformed into data, tibiapi uses a hash function to often avoid the [OpenCV](https://opencv.org) match template and excessive CPU usage, this is why many functions have responses between milliseconds and nanoseconds:
+Before understanding how small pieces of images are transformed into data, tibiapi uses a hash function to often avoid the [OpenCV](https://opencv.org) match template and excessive [CPU](https://en.wikipedia.org/wiki/Central_processing_unit) usage, this is why many functions have responses between [milliseconds](https://simple.wikipedia.org/wiki/Millisecond) and [nanoseconds](https://en.wikipedia.org/wiki/Nanosecond):
 
 ```python
 import numpy as np
@@ -25,7 +25,7 @@ secondValueHash = hashit(secondValue) # will return 56921796602230608
 print(firstValueHash == secondValueHash) # True
 ```
 
-Some areas of the Tibia client screen contain a background with random gray pixels, it would be possible to obtain them with OCR, but this would make the process very slow and instead of using OCR, the hash system is used after clearing the background and leave it with a static color.
+Some areas of the Tibia client screen contain a background with random gray pixels, it would be possible to obtain them with [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition), but this would make the process very slow and instead of using it, a hash system is used after clearing the background and leave it with a static color.
 
 Below in the figure, an example of a fire elemental in the battle list, before the cleaning process:
 
