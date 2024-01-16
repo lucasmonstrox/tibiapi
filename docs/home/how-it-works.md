@@ -25,13 +25,13 @@ secondValueHash = hashit(secondValue) # will return 56921796602230608
 print(firstValueHash == secondValueHash) # True
 ```
 
-Some areas of the Tibia client screen contain a background with random gray pixels, it would be possible to obtain them with [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition), but this would make the process very slow and instead of using it, a hash system is used after clearing the background and leave it with a static color.
+Some areas of the Tibia client screen contain a background with random gray pixels, it would be possible to obtain them with [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition), but this would make the process very slow and instead of using it, a hash system is used after clearing the background to a static black color.
 
-Below in the figure, an example of a fire elemental in the battle list, before the cleaning process:
+Below in the figure, an example of a fire elemental in the battle list, with grandom gray pixels, before the cleaning process:
 
 ![Fire Elemental Dirt](./Fire Elemental Dirt.png)
 
-After the cleaning process, these gray colors are cleaned by changing them to black:
+After the cleaning process, these gray pixels are cleaned by changing them to black pixels:
 
 ![Fire Elemental Clean](./Fire Elemental.png)
 
