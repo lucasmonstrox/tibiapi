@@ -8,10 +8,10 @@ Since detecting objects is not implemented, marking the coordinate as "unwalkabl
 
 ### Invisible creatures
 
-Getting invisible creatures is not possible, but "wiki" module provides which creatures can become invisible at any time, sometimes they appear on the screen and can be attacked in that area with a rune or by a spell when the character is blocked.
+Getting invisible creatures is not possible, but "wiki" module provides which creatures can become invisible at any time, sometimes they appear on the screen and can be attacked in that area with a rune or by a spell when the character is close and blocked by invisible creature.
 
 ### Players on screen
 
-Parsing players names doesn't have the same assertiveness as monsters or npc's since these have a fixed name in the battle list and tibiapi has kept this in memory, while players have random names and sometimes with ellipsis in the battle list.
+Parsing players names doesn't have the same assertiveness as [Creatures](https://tibia.fandom.com/wiki/Creatures) or [NPCs](https://tibia.fandom.com/wiki/NPCs) since these have a fixed name in the battle list and tibiapi has kept this in memory, while players have random names and sometimes with ellipsis in the battle list.
 
-Getting it through [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition) would be impractical and slow, which is not the purpose of tibiapi, but, tibiapi can categorize what is a monster, what is familiar, what is an npc and what is left is categorized as a player.
+Getting it through [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition) would be impractical and slow, which is not the purpose of tibiapi, but, tibiapi can categorize what is a [Creatures](https://tibia.fandom.com/wiki/Creatures), what is [Familiars](https://tibia.fandom.com/wiki/Familiars), what is [NPCs](https://tibia.fandom.com/wiki/NPCs) and what is left is categorized as a Players.

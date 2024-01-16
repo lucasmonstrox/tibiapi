@@ -59,7 +59,7 @@ Not all the code is machine code, but it would be ideal, so all the typing would
 
 ### Cache mechanism
 
-Many functions have a cache system, since some pixels are read from a specific area and it doesn't change, it is not necessary to recalculate the function, just cut out a certain region and obtain the hash of this small image generated, if the hash of this image is the same as the previous one, the value is the same.
+Many functions have a [Cache](https://en.wikipedia.org/wiki/Cache_(computing)) mechanism, since some pixels are read from a specific area and it doesn't change, it is not necessary to recalculate the function, just cut out a certain region and obtain the hash of this small image generated, if the hash of this image is the same as the previous one, the value is the same.
 
 Getting the hash from a image is possible using `#!python hashit`. The response time should vary between 300 and 500 [nanoseconds](https://en.wikipedia.org/wiki/Nanosecond).
 
