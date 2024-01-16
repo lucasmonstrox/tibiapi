@@ -61,8 +61,8 @@ Not all the code is machine code, but it would be ideal, so all the typing would
 
 Many functions have a [Cache](https://en.wikipedia.org/wiki/Cache_(computing)) mechanism, since some pixels are read from a specific area and it doesn't change, it is not necessary to recalculate the function, just cut out a certain region and obtain the hash of this small image generated, if the hash of this image is the same as the previous one, the value is the same.
 
-Getting the hash from a image is possible using `#!python hashit`. The response time should vary between 300 and 500 [nanoseconds](https://en.wikipedia.org/wiki/Nanosecond).
+Getting the hash from a image is possible using `#!python hashit` function provided in utils module. The response time should vary between 300 and 500 [nanoseconds](https://en.wikipedia.org/wiki/Nanosecond).
 
 ### Time magnitude
 
-Small functions such as getting the level, getting the speed, etc., will respond in 10 microseconds, however, as they will be cached, the time will reduce by about 5 times and the response time will be 2 microseconds if the content does not change.
+Small functions such as getting the level, getting the speed, etc., will respond in 5 microseconds, however, as they will be cached, the time will reduce by about 5 times and the response time will be 1 microseconds if the content does not change.
