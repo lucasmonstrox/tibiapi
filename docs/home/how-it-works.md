@@ -65,4 +65,4 @@ Getting the hash from a image is possible using `#!python hashit` function provi
 
 ### Time magnitude
 
-Small functions such as getting the level, getting the speed, etc., will respond in 5 microseconds, however, as they will be cached, the time will reduce by about 5 times and the response time will be 1 microseconds if the content does not change.
+Small functions such as getting the level, getting the speed, etc., will respond in 5 [Microseconds](https://en.wikipedia.org/wiki/Microsecond), however, as they will be cached, the time will reduce by about 5 times and the response time will be 1 [Microseconds](https://en.wikipedia.org/wiki/Microsecond) if the content doesn't change.
