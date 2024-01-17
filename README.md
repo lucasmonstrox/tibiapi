@@ -31,27 +31,6 @@ See the full [documentation](https://tibiapi.readthedocs.io) in readthedocs.
 | Store      | ❌   |
 | VIPList    | ❌   |
 
-## 🧰 Installation
-
-### Prerequisites
-
-- [`Python`](https://www.python.org/downloads/release/python-3117) 3.11.7
-- [`Poetry`](https://python-poetry.org/docs/#installation) >=1.7.1 (if needed)
-
-Install packages before continue
-
-```bash
-poetry install
-```
-
-## ⌨ Development
-
-### 🧪 Running tests
-
-```bash
-poetry run python -m pytest
-```
-
 ## ✅ TODO
 
 - configure mypy
