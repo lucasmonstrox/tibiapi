@@ -8,7 +8,7 @@
 
 > Fastest Tibia PixelBot API made in [Python](https://www.python.org/downloads/release/python-3117).
 
-See the full [documentation](https://tibiapi.readthedocs.io) in readthedocs.
+See the full documentation in [https://tibiapi.readthedocs.io](https://tibiapi.readthedocs.io).
 
 ## 🗺️ Features
 
