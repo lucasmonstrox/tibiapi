@@ -36,7 +36,7 @@ See the full [documentation](https://tibiapi.readthedocs.io) in readthedocs.
 ### Prerequisites
 
 - [`Python`](https://www.python.org/downloads/release/python-3117) 3.11.7
-- [`Poetry`](https://python-poetry.org/docs/#installation) >=1.7.1
+- [`Poetry`](https://python-poetry.org/docs/#installation) >=1.7.1 (if needed)
 
 Install packages before continue
 
