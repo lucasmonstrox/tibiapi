@@ -14,6 +14,10 @@ jobs:
         with:
           poetry-version: 1.7.1
       - name: Install poetry dependencies
-        run: poetry install
+        run: poetry install --without doc
       - name: Unit tests
         run: poetry run python -m pytest .
+      - name: Uplodate test coverage to codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}

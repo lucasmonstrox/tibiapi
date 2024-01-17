@@ -1,9 +1,14 @@
-# 📝 Description
+# tibiapi
+
+![ci](https://github.com/lucasmonstrox/tibiapi/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/lucasmonstrox/tibiapi/graph/badge.svg?token=7BTPYKHC80)](https://codecov.io/gh/lucasmonstrox/tibiapi)
+![docs](https://readthedocs.org/projects/tibiapi/badge/?version=latest)
+
+## 📝 Description
 
 > Fastest Tibia PixelBot API made in [Python](https://www.python.org/downloads/release/python-3117).
 
 See the full [documentation](https://tibiapi.readthedocs.io) in readthedocs.
-
 
 # 🗺️ Features
 
