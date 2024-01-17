@@ -43,7 +43,7 @@ mkdocstrings-python = "^1.7.5"
 docs = "mkdocs serve"
 test = "python -m pytest -s -x --cov=src -vv"
 post_test = "coverage html"
-publish = "poetry publish -u $PYPI_USER -p $PYPI_PASSWORD --build"
+publish = "poetry publish --build"
 
 [build-system]
 requires = ["poetry-core"]
