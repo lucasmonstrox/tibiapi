@@ -10,7 +10,7 @@
 
 See the full [documentation](https://tibiapi.readthedocs.io) in readthedocs.
 
-# 🗺️ Features
+## 🗺️ Features
 
 | Features   | Done |
 | ---------- | ---- |
@@ -31,9 +31,9 @@ See the full [documentation](https://tibiapi.readthedocs.io) in readthedocs.
 | Store      | ❌   |
 | VIPList    | ❌   |
 
-# 🧰 Installation
+## 🧰 Installation
 
-## Prerequisites
+### Prerequisites
 
 - [`Python`](https://www.python.org/downloads/release/python-3117) 3.11.7
 - [`Poetry`](https://python-poetry.org/docs/#installation) >=1.7.1
@@ -44,20 +44,20 @@ Install packages before continue
 poetry install
 ```
 
-# ⌨ Development
+## ⌨ Development
 
-## 🧪 Running tests
+### 🧪 Running tests
 
 ```bash
 poetry run python -m pytest
 ```
 
-# ✅ TODO
+## ✅ TODO
 
 - configure mypy
 - add benchmark tests
 
-# 👷 Authors
+## 👷 Authors
 
 - [**lucasmonstrox**](http://github.com/lucasmonstrox)([**linkedin**](https://www.linkedin.com/in/lucasmonstrox/)) - Owner & Developer
 
@@ -66,7 +66,7 @@ in this project.
 
 If you want to become a contributor, send a message to my [**linkedin**](https://www.linkedin.com/in/lucasmonstrox/).
 
-# 📝 License
+## 📝 License
 
 Copyright © 2023 [**lucasmonstro**](https://github.com/lucasmonstro)  
 This project is [MIT](https://opensource.org/licenses/MIT) licensed
