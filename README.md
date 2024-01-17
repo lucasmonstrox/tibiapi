@@ -44,8 +44,3 @@ See also the list of [contributors](../../graphs/contributors) who participated
 in this project.
 
 If you want to become a contributor, send a message to my [**linkedin**](https://www.linkedin.com/in/lucasmonstrox/).
-
-## 📝 License
-
-Copyright © 2023 [**lucasmonstro**](https://github.com/lucasmonstro)  
-This project is [MIT](https://opensource.org/licenses/MIT) licensed
