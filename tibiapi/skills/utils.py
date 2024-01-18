@@ -15,6 +15,20 @@ def cleanBackgroundGrayPixels(image: GrayImage) -> GrayImage:
     return zeros
 
 
+def getFullNumberByImage(image: GrayImage, times: int) -> int:
+    number = 0
+    numbersImagesIndexes = [[132, 154], [104, 126], [76, 98], [48, 70]]
+    for i in range(times):
+        x0, x1 = numbersImagesIndexes[i]
+        numberImage = image[:, x0:x1]
+        currentNumber = getNumberByImage(numberImage)
+        if i == 0:
+            number += currentNumber
+            continue
+        number += currentNumber * 10 ** (3 * i)
+    return number
+
+
 def getNumberByImage(numberImage: GrayImage) -> int:
     numberImage = cleanBackgroundGrayPixels(numberImage)
     numberImageHAsh = hashit(numberImage)

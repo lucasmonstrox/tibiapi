@@ -2,7 +2,7 @@ from typing import Optional
 from tibiapi._common.container import Container
 from tibiapi._common.rectImage import RectImage
 from tibiapi.utils.color import isPixelColor
-from .utils import getNumberByImage
+from .utils import getFullNumberByImage
 
 
 class Skills:
@@ -25,17 +25,10 @@ class Skills:
     def __init__(self, rectImage: RectImage):
         self.container = Container(rectImage)
 
-    # TODO: calculate thousand number when comma is present
     def getLevel(self) -> Optional[int]:
         if not self.container.isMaximized:
             return None
-        image = self.container.rectImage.image[26:34, :][:, :, 0]
-        thousandNumberImage = image[:, 104:126]
-        hundredNumberImage = image[:, 132:154]
-        thousandNumber = getNumberByImage(thousandNumberImage) * 1000
-        hundredNumber = getNumberByImage(hundredNumberImage)
-        number = thousandNumber + hundredNumber
-        return number
+        return getFullNumberByImage(self.container.rectImage.image[26:34, :][:, :, 1], 2)
 
     def levelPercentageBarIsOpen(self) -> Optional[bool]:
         if not self.container.isMaximized:
@@ -47,13 +40,4 @@ class Skills:
             return None
         y = 47 if self.levelPercentageBarIsOpen() else 40
         image = self.container.rectImage.image[y:y + 8, :][:, :, 0]
-        hundredNumberImage = image[:, 132:154]
-        hundredNumber = getNumberByImage(hundredNumberImage)
-        thousandNumberImage = image[:, 104:126]
-        thousandNumber = getNumberByImage(thousandNumberImage) * 1000
-        millionNumberImage = image[:, 76:98]
-        millionNumber = getNumberByImage(millionNumberImage) * 1000000
-        billionNumberImage = image[:, 48:70]
-        billionNumber = getNumberByImage(billionNumberImage) * 1000000000
-        number = thousandNumber + hundredNumber + millionNumber + billionNumber
-        return number
+        return getFullNumberByImage(image, 4)
