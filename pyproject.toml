@@ -15,7 +15,7 @@ classifiers = [
 
 [tool.poetry.urls]
 "Documentation" = "https://tibiapi.readthedocs.io/en/latest/"
-"Codebase" = "https://github.com/lucasmonstrox/tibiapi"
+"Source" = "https://github.com/lucasmonstrox/tibiapi"
 "Bug Tracker" = "https://github.com/lucasmonstrox/tibiapi/issues"
 
 [tool.poetry.dependencies]
