@@ -1,7 +1,7 @@
 tibiapi works locating images around the screen through match template [OpenCV](https://opencv.org) function:
 
 ```python
-from src.utils.image import locate
+from tibiapi.utils.image import locate
 
 
 x, y, width, height = locate(screenshot, battleListIcon)
@@ -15,7 +15,7 @@ Before understanding how small pieces of images are transformed into data, tibia
 
 ```python
 import numpy as np
-from src.utils.image import hashit
+from tibiapi.utils.image import hashit
 
 
 firstValue = np.ascontiguousarray([[1, 2, 3], [4, 5, 6]])
@@ -39,7 +39,7 @@ Now that the image is static and the same as what it contains in tibiapi, gettin
 
 ```python
 import numpy as np
-from src.utils.image import hashit
+from tibiapi.utils.image import hashit
 
 
 fireElementalImage = ... # image after cleaning process

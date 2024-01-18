@@ -35,7 +35,7 @@ plugins:
       enable_inventory: true
       handlers:
         python:
-          paths: [src]
+          paths: [tibiapi]
           import:
             - https://docs.python.org/3/objects.inv
             - https://installer.readthedocs.io/en/stable/objects.inv

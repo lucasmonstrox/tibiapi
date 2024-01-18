@@ -1,6 +1,6 @@
 import pathlib
-from src._common.rectImage import RectImage
-from src.utils.image import load
+from tibiapi._common.rectImage import RectImage
+from tibiapi.utils.image import load
 
 
 currentPath = pathlib.Path(__file__).parent.resolve()

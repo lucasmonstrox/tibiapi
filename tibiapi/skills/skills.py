@@ -1,7 +1,7 @@
 from typing import Optional
-from src._common.container import Container
-from src._common.rectImage import RectImage
-from src.utils.color import isPixelColor
+from tibiapi._common.container import Container
+from tibiapi._common.rectImage import RectImage
+from tibiapi.utils.color import isPixelColor
 from .utils import getNumberByImage
 
 

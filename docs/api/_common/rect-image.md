@@ -1,1 +1,1 @@
-::: src._common.container.RectImage
+::: tibiapi._common.container.RectImage

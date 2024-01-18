@@ -3,7 +3,7 @@ from farmhash import FarmHash64
 import numpy as np
 from PIL import Image as PilImage
 from typing import Optional
-from src._common.typings import Image
+from tibiapi._common.typings import Image
 
 
 def hashit(arr: np.ndarray) -> int:

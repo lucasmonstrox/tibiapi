@@ -1,5 +1,5 @@
 from typing import Optional
-from src._common.rectImage.rectImage import RectImage
+from tibiapi._common.rectImage.rectImage import RectImage
 from .slot import Slot
 
 

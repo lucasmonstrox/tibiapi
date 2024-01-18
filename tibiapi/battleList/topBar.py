@@ -1,6 +1,6 @@
 from functools import cached_property
-from src._common.container import TopBar as ContainerTopBar
-from src._common.rectImage import makeFromRectImage, RectImage
+from tibiapi._common.container import TopBar as ContainerTopBar
+from tibiapi._common.rectImage import makeFromRectImage, RectImage
 
 
 class TopBar(ContainerTopBar):

@@ -1,7 +1,7 @@
 import numpy as np
 import pathlib
-from src.utils.image import hashit, load
-from src.wiki.creatures import creatures
+from tibiapi.utils.image import hashit, load
+from tibiapi.wiki.creatures import creatures
 
 
 parentPath = pathlib.Path(__file__).parent.resolve()

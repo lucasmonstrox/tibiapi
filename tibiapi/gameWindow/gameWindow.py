@@ -1,7 +1,7 @@
 import numpy as np
 from typing import Optional
-from src._common.typings import Image
-from src.battleList.typings import CreatureList as BattleListCreatures
+from tibiapi._common.typings import Image
+from tibiapi.battleList.typings import CreatureList as BattleListCreatures
 from .creature import Creature
 from .config import creaturesNamesHashes
 from .typings import CreatureList

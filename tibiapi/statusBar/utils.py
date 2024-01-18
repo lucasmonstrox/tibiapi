@@ -1,6 +1,6 @@
 from numba import njit
-from src._common.typings import Image
-from src.utils.color import isPixelColor
+from tibiapi._common.typings import Image
+from tibiapi.utils.color import isPixelColor
 
 
 @njit(cache=True)

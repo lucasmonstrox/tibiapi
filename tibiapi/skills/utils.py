@@ -1,7 +1,7 @@
 from numba import njit
 import numpy as np
-from src._common.typings import GrayImage
-from src.utils.image import hashit
+from tibiapi._common.typings import GrayImage
+from tibiapi.utils.image import hashit
 from .config import numbersImagesHashes
 
 

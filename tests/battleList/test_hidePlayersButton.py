@@ -1,8 +1,8 @@
 import numpy as np
 import pathlib
-from src._common.rectImage import RectImage
-from src.battleList import BattleList
-from src.utils.image import load
+from tibiapi._common.rectImage import RectImage
+from tibiapi.battleList import BattleList
+from tibiapi.utils.image import load
 
 
 currentPath = pathlib.Path(__file__).parent.resolve()
@@ -29,7 +29,7 @@ def test_should_return_hidePlayersButton_when_configuring_creatures():
     battleListRectImage = RectImage(0, 0, battleListImage)
     battleList = BattleList(battleListRectImage)
     hidePlayersButtonImage = load(
-        'src/battleList/images/buttons/hidePlayers.png')
+        'tibiapi/battleList/images/buttons/hidePlayers.png')
     assert battleList.togglePlayersButton.x == 23
     assert battleList.togglePlayersButton.y == 17
     assert battleList.togglePlayersButton.width == 20
@@ -44,7 +44,7 @@ def test_should_return_showPlayersButton_when_configuring_creatures():
     battleListRectImage = RectImage(0, 0, battleListImage)
     battleList = BattleList(battleListRectImage)
     showPlayersButtonImage = load(
-        'src/battleList/images/buttons/showPlayers.png')
+        'tibiapi/battleList/images/buttons/showPlayers.png')
     assert battleList.togglePlayersButton.x == 23
     assert battleList.togglePlayersButton.y == 17
     assert battleList.togglePlayersButton.width == 20

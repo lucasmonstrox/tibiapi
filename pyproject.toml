@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "tibiapi"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["lucasmonstrox <joao.galiano.silva@gmail.com>"]
 readme = "README.md"
 license = "MIT"
-packages = [{include = "src"}]
+packages = [{include = "tibiapi"}]
 classifiers = [
     "Natural Language :: Portuguese (Brazilian)",
     "Development Status :: 5 - Production/Stable",
@@ -41,7 +41,7 @@ mkdocstrings-python = "^1.7.5"
 
 [tool.taskipy.tasks]
 docs = "mkdocs serve"
-test = "python -m pytest -s -x --cov=src -vv"
+test = "python -m pytest -s -x --cov=tibiapi -vv"
 post_test = "coverage html"
 publish = "poetry publish --build"
 

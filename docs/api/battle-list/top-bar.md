@@ -1,1 +1,1 @@
-::: src.battleList.TopBar
+::: tibiapi.battleList.TopBar

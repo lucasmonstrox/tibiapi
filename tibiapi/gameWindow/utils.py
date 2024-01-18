@@ -2,8 +2,8 @@ import math
 from numba import njit
 import numpy as np
 from typing import Dict
-from src._common.typings import GrayImage, Image, Pixel
-from src.battleList.typings import CreatureList as BattleListCreatures
+from tibiapi._common.typings import GrayImage, Image, Pixel
+from tibiapi.battleList.typings import CreatureList as BattleListCreatures
 from .typings import CreatureList, CreaturesBars
 
 

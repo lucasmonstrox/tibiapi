@@ -1,1 +1,1 @@
-::: src.battleList.BattleList
+::: tibiapi.battleList.BattleList

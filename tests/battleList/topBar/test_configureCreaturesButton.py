@@ -1,8 +1,8 @@
 import numpy as np
 import pathlib
-from src._common.rectImage import RectImage
-from src.battleList import TopBar
-from src.utils.image import load
+from tibiapi._common.rectImage import RectImage
+from tibiapi.battleList import TopBar
+from tibiapi.utils.image import load
 
 
 currentPath = pathlib.Path(__file__).parent.parent.resolve()
@@ -14,7 +14,7 @@ def test_should_match_configure_creatures_button_image():
     battleListRectImage = RectImage(0, 0, battleListImage)
     topBar = TopBar(battleListRectImage)
     configureCreaturesButton = load(
-        'src/battleList/images/buttons/configureCreatures.png')
+        'tibiapi/battleList/images/buttons/configureCreatures.png')
     assert topBar.configureCreaturesButton.x == 133
     assert topBar.configureCreaturesButton.y == 2
     assert topBar.configureCreaturesButton.width == 12
@@ -29,7 +29,7 @@ def test_should_match_configure_creatures_button_pressed_image():
     battleListRectImage = RectImage(0, 0, battleListImage)
     topBar = TopBar(battleListRectImage)
     configureCreaturesButton = load(
-        'src/battleList/images/buttons/configureCreaturesPressed.png')
+        'tibiapi/battleList/images/buttons/configureCreaturesPressed.png')
     assert topBar.configureCreaturesButton.x == 133
     assert topBar.configureCreaturesButton.y == 2
     assert topBar.configureCreaturesButton.width == 12

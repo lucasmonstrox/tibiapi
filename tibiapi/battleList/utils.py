@@ -1,6 +1,6 @@
 from numba import njit
 import numpy as np
-from src._common.typings import GrayImage, Image
+from tibiapi._common.typings import GrayImage, Image
 
 
 @njit(cache=True, fastmath=True)

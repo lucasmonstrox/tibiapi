@@ -1,10 +1,10 @@
 from functools import cached_property
 from typing import Optional
-from src._common.container import Container
-from src._common.rectImage import makeFromRectImage, RectImage
-from src._common.typings import Image
-from src.utils.color import isPixelColor
-from src.utils.image import hashit
+from tibiapi._common.container import Container
+from tibiapi._common.rectImage import makeFromRectImage, RectImage
+from tibiapi._common.typings import Image
+from tibiapi.utils.color import isPixelColor
+from tibiapi.utils.image import hashit
 from .config import creaturesNamesImagesHashes
 from .topBar import TopBar
 from .typings import CreatureList

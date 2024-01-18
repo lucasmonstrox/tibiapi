@@ -1,1 +1,1 @@
-::: src.statusBar.StatusBar
+::: tibiapi.statusBar.StatusBar

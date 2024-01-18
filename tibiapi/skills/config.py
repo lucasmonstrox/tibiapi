@@ -1,6 +1,6 @@
 import numpy as np
 import pathlib
-from src.utils.image import hashit, load
+from tibiapi.utils.image import hashit, load
 
 
 currentPath = pathlib.Path(__file__).parent.resolve()

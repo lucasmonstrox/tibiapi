@@ -1,5 +1,5 @@
 from functools import cached_property
-from src._common.rectImage import RectImage
+from tibiapi._common.rectImage import RectImage
 from .utils import healthPercentage, manaPercentage
 
 

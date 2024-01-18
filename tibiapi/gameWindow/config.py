@@ -1,5 +1,5 @@
-from src.wiki.creatures import creatures as wikiCreatures
-from src.utils.image import load
+from tibiapi.wiki.creatures import creatures as wikiCreatures
+from tibiapi.utils.image import load
 import pathlib
 from numba import typed, types
 currentPath = pathlib.Path(__file__).parent.resolve()
