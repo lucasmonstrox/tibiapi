@@ -6,7 +6,7 @@ from tibiapi.wiki.creatures import creatures
 
 parentPath = os.path.dirname(os.path.abspath(__file__))
 imagesPath = f'{parentPath}/images'
-creaturesPath = f'{imagesPath}/monsters'
+creaturesPath = f'{imagesPath}/creatures'
 creaturesNamesImagesHashes = {}
 
 for creatureName in creatures:
