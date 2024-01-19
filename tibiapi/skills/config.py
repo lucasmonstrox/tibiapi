@@ -1,5 +1,7 @@
+from numba import typed
 import numpy as np
 import pathlib
+from typing import List
 from tibiapi.utils.image import hashit, load
 
 
@@ -54,3 +56,10 @@ for number in range(1000):
         numberAsImg = np.array(numberAsImg, dtype=np.uint8)
         hashKey = hashit(numberAsImg)
         numbersImagesHashes[hashKey] = number
+
+pixelsIndexesValues: List[tuple[int, int]] = typed.List([
+    (142, 99), (136, 95), (129, 90), (122, 85), (115, 80),
+    (108, 75), (101, 70), (93, 65), (86, 60), (79, 55),
+    (72, 50), (65, 45), (58, 40), (51, 35), (43, 30),
+    (36, 25), (29, 20), (22, 15), (15, 10), (8, 5), (0, 1),
+])
