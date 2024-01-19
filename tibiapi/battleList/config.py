@@ -1,10 +1,10 @@
 import numpy as np
-import pathlib
+import os
 from tibiapi.utils.image import hashit, load
 from tibiapi.wiki.creatures import creatures
 
 
-parentPath = pathlib.Path(__file__).parent.resolve()
+parentPath = os.path.dirname(os.path.abspath(__file__))
 imagesPath = f'{parentPath}/images'
 monstersPath = f'{imagesPath}/monsters'
 creaturesNamesImagesHashes = {}

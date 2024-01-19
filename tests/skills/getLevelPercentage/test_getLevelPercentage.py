@@ -1,12 +1,11 @@
-import pathlib
+import os
 from tibiapi._common.rectImage import RectImage
-from tibiapi._common.typings import Image
 from tibiapi.skills import Skills
 from tibiapi.utils.image import load
 
 
 def loadSkillsByImage(imagePath: str) -> Skills:
-    currentPath = pathlib.Path(__file__).parent.resolve()
+    currentPath = os.path.dirname(os.path.abspath(__file__))
     skillsImage = load(f'{currentPath}/images/{imagePath}')
     skillsRectImage = RectImage(0, 0, skillsImage)
     return Skills(skillsRectImage)
