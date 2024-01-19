@@ -385,7 +385,7 @@ creatures = {
     'Falcon Knight': {'exp': 5985, 'hp': 9000, 'gameWindowMisalignment': {'x': 4, 'y': 12}},
     'Falcon Paladin': {'exp': 6544, 'hp': 8500, 'gameWindowMisalignment': {'x': 4, 'y': 12}},
     'Fallen Challenger': {'exp': 0, 'hp': 9000},
-    'Fallen Mooh\'tah Master Ghar': {'exp': 4400, 'hp': 7990, 'gameWindowMisalignment': {'x': 16, 'y': 16}},
+    'Fallen Mooh\'Tah Master Ghar': {'exp': 4400, 'hp': 7990, 'gameWindowMisalignment': {'x': 16, 'y': 16}},
     'Fatality': {'exp': 3250, 'hp': 6000},
     'Faun': {'exp': 800, 'hp': 900},
     'Fazzrah': {'exp': 2600, 'hp': 2955},
