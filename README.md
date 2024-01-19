@@ -1,8 +1,8 @@
 # tibiapi
 
 [![CI](https://github.com/lucasmonstrox/tibiapi/actions/workflows/ci.yml/badge.svg)](https://github.com/lucasmonstrox/tibiapi/actions/workflows/ci.yml)
-[![Documentation Status](https://readthedocs.org/projects/tibiapi/badge/?version=latest)](https://tibiapi.readthedocs.io/en/latest/)
 [![codecov](https://codecov.io/gh/lucasmonstrox/tibiapi/branch/main/graph/badge.svg?token=7BTPYKHC80)](https://codecov.io/gh/lucasmonstrox/tibiapi)
+[![Documentation Status](https://readthedocs.org/projects/tibiapi/badge/?version=latest)](https://tibiapi.readthedocs.io/en/latest/)
 [![PyPI version](https://badge.fury.io/py/tibiapi.svg)](https://badge.fury.io/py/tibiapi)
 
 > Fastest Tibia API made in [Python](https://www.python.org/downloads/release/python-3117).
