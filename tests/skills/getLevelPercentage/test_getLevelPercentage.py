@@ -22,11 +22,6 @@ def test_should_return_0_when_level_bar_is_empty():
     assert skills.getLevelPercentage() == 0
 
 
-def test_should_return_1_when_level_bar_is_empty():
-    skills = loadSkillsByImage('skillsWith1Percentage.png')
-    assert skills.getLevelPercentage() == 1
-
-
 def test_should_return_1_when_level_bar_is_1_of_percentage():
     skills = loadSkillsByImage('skillsWith1Percentage.png')
     assert skills.getLevelPercentage() == 1
