@@ -1,7 +1,7 @@
 # tibiapi
 
-[![Documentation Status](https://readthedocs.org/projects/tibiapi/badge/?version=latest)](https://tibiapi.readthedocs.io/en/latest/)
 [![CI](https://github.com/lucasmonstrox/tibiapi/actions/workflows/ci.yml/badge.svg)](https://github.com/lucasmonstrox/tibiapi/actions/workflows/ci.yml)
+[![Documentation Status](https://readthedocs.org/projects/tibiapi/badge/?version=latest)](https://tibiapi.readthedocs.io/en/latest/)
 [![codecov](https://codecov.io/gh/lucasmonstrox/tibiapi/branch/main/graph/badge.svg?token=7BTPYKHC80)](https://codecov.io/gh/lucasmonstrox/tibiapi)
 [![PyPI version](https://badge.fury.io/py/tibiapi.svg)](https://badge.fury.io/py/tibiapi)
 
