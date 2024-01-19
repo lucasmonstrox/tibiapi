@@ -1,10 +1,10 @@
-import pathlib
+import os
 from tibiapi._common.rectImage import RectImage
 from tibiapi.battleList import BattleList
 from tibiapi.utils.image import load
 
 
-currentPath = pathlib.Path(__file__).parent.resolve()
+currentPath = os.path.dirname(os.path.abspath(__file__))
 
 
 def test_should_return_True_when_configuring_creatures_is_shown():
