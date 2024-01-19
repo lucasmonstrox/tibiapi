@@ -1,6 +1,7 @@
 from numba import njit
 import numpy as np
-from tibiapi._common.typings import GrayImage
+from typing import List
+from tibiapi._common.typings import GrayImage, Image
 from tibiapi.utils.image import hashit
 from .config import numbersImagesHashes
 
@@ -27,6 +28,14 @@ def getFullNumberByImage(image: GrayImage, times: int) -> int:
             continue
         number += currentNumber * 10 ** (3 * i)
     return number
+
+
+@njit(cache=True)
+def getLevelPercentage(barImage: Image, pixelsIndexesValues: List[tuple[int, int]]) -> int:
+    for pixelIndexValue in pixelsIndexesValues:
+        if barImage[pixelIndexValue[0]] == 192:
+            return pixelIndexValue[1]
+    return 0
 
 
 def getNumberByImage(numberImage: GrayImage) -> int:
