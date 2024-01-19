@@ -14,7 +14,7 @@ jobs:
         with:
           poetry-version: 1.7.1
       - name: Install poetry dependencies
-        run: poetry install --without doc
+        run: poetry install --without docs
       - name: Unit tests
         run: poetry run task test
       - name: Uplodate test coverage to codecov
