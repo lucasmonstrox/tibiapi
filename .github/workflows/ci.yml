@@ -16,7 +16,7 @@ jobs:
       - name: Install poetry dependencies
         run: poetry install --without docs
       - name: Unit tests
-        run: poetry run task test
+        run: poetry run task test --cov-report=xml
       - name: Uplodate test coverage to codecov
         uses: codecov/codecov-action@v3
         with:
