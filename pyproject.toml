@@ -41,7 +41,7 @@ mkdocstrings-python = "^1.7.5"
 
 [tool.taskipy.tasks]
 docs = "mkdocs serve"
-test = "python -m pytest -s -x --cov=tibiapi -vv"
+test = "python -m pytest ./tests -s -x --cov=tibiapi -vv"
 post_test = "coverage html"
 publish = "poetry publish --build"
 
