@@ -1,12 +1,11 @@
 # tibiapi
 
-![ci](https://github.com/lucasmonstrox/tibiapi/actions/workflows/ci.yml/badge.svg)
-[![codecov](https://codecov.io/gh/lucasmonstrox/tibiapi/graph/badge.svg?token=7BTPYKHC80)](https://codecov.io/gh/lucasmonstrox/tibiapi)
-![docs](https://readthedocs.org/projects/tibiapi/badge/?version=latest)
+[![Documentation Status](https://readthedocs.org/projects/tibiapi/badge/?version=latest)](https://tibiapi.readthedocs.io/en/latest/)
+[![CI](https://github.com/lucasmonstrox/tibiapi/actions/workflows/ci.yml/badge.svg)](https://github.com/lucasmonstrox/tibiapi/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/lucasmonstrox/tibiapi/branch/main/graph/badge.svg?token=7BTPYKHC80)](https://codecov.io/gh/lucasmonstrox/tibiapi)
+[![PyPI version](https://badge.fury.io/py/tibiapi.svg)](https://badge.fury.io/py/tibiapi)
 
-## 📝 Description
-
-> Fastest Tibia PixelBot API made in [Python](https://www.python.org/downloads/release/python-3117).
+> Fastest Tibia API made in [Python](https://www.python.org/downloads/release/python-3117).
 
 See the full documentation in [https://tibiapi.readthedocs.io](https://tibiapi.readthedocs.io).
 
