@@ -1,11 +1,11 @@
 import numpy as np
-import pathlib
+import os
 from tibiapi._common.rectImage import RectImage
 from tibiapi.battleList import BattleList
 from tibiapi.utils.image import load
 
 
-currentPath = pathlib.Path(__file__).parent.resolve()
+currentPath = os.path.dirname(os.path.abspath(__file__))
 
 
 def test_should_return_None_when_battle_list_is_minimized():
