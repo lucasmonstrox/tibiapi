@@ -6,8 +6,8 @@ from tibiapi.battleList import BattleList
 from tibiapi._common import RectImage
 
 image = np.array([...], dtype=np.uint8) # must be an BGRA image converted into NumPy array using uint8 to gain performance
-battleListImage = RectImage(image)
-battleList = BattleList(image)
+battleListImage = RectImage(0, 0, image)
+battleList = BattleList(battleListImage)
 battleList.creatures() # will return battle list creatures ['Dragon', 'Dragon Lord']
 ```
 
