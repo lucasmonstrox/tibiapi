@@ -9,6 +9,7 @@ currentPath = pathlib.Path(__file__).parent.resolve()
 imagesPath = f'{currentPath}/images'
 iconsImagesPath = f'{imagesPath}/icons'
 digitsImagesPath = f'{imagesPath}/digits'
+labelsImagesPath = f'{imagesPath}/labels'
 images = {
     'digits': {
         0: load(f'{digitsImagesPath}/0.png'),
@@ -22,6 +23,9 @@ images = {
         8: load(f'{digitsImagesPath}/8.png'),
         9: load(f'{digitsImagesPath}/9.png'),
     },
+    'labels': {
+        'xpGainRate': load(f'{labelsImagesPath}/xpGainRate.png'),
+    }
 }
 numbersImagesHashes = {}
 for number in range(1000):

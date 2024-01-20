@@ -2,8 +2,36 @@ import cv2
 from farmhash import FarmHash64
 import numpy as np
 from PIL import Image as PilImage
-from typing import Optional
+from typing import Callable, Optional
 from tibiapi._common.typings import Image
+
+
+def cacheObjectPosition(func: Callable) -> Callable:
+    lastX = None
+    lastY = None
+    lastW = None
+    lastH = None
+    lastImgHash = None
+
+    def inner(screenshot: Image) -> Optional[tuple[int, int, int, int]]:
+        nonlocal lastX, lastY, lastW, lastH, lastImgHash
+        if lastX != None and lastY != None and lastW != None and lastH != None:
+            currentImage = np.ascontiguousarray(
+                screenshot[lastY:lastY + lastH, lastX:lastX + lastW])
+            if hashit(currentImage) == lastImgHash:
+                return (lastX, lastY, lastW, lastH)
+        res = func(screenshot)
+        if res is None:
+            return None
+        lastX = res[0]
+        lastY = res[1]
+        lastW = res[2]
+        lastH = res[3]
+        currentImage = np.ascontiguousarray(
+            screenshot[lastY:lastY + lastH, lastX:lastX + lastW])
+        lastImgHash = hashit(currentImage)
+        return res
+    return inner
 
 
 def hashit(arr: np.ndarray) -> int:

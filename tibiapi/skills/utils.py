@@ -1,17 +1,28 @@
 from numba import njit
 import numpy as np
-from typing import List
+from typing import List, Optional
 from tibiapi._common.typings import GrayImage, Image
-from tibiapi.utils.image import hashit
-from .config import numbersImagesHashes
+from tibiapi.utils.image import cacheObjectPosition, hashit, locate
+from .config import images, numbersImagesHashes
 
 
 @njit(cache=True, boundscheck=False)
-def cleanBackgroundGrayPixels(image: GrayImage) -> GrayImage:
+def cleanBackgroundPixels(image: GrayImage) -> GrayImage:
     zeros = np.zeros((8, 22), dtype=np.uint8)
     for y in range(len(image)):
         for x in range(len(image[0])):
             if image[y, x] == 192:
+                zeros[y, x] = 192
+    return zeros
+
+
+@njit(cache=True, boundscheck=False)
+def cleanColouredPixels(image: GrayImage) -> GrayImage:
+    zeros = np.zeros((8, 22), dtype=np.uint8)
+    for y in range(len(image)):
+        for x in range(len(image[0])):
+            pixel = image[y, x]
+            if pixel == 192 or pixel == 173 or pixel == 152:
                 zeros[y, x] = 192
     return zeros
 
@@ -22,7 +33,7 @@ def getFullNumberByImage(image: GrayImage, times: int) -> int:
     for i in range(times):
         x0, x1 = numbersImagesIndexes[i]
         numberImage = image[:, x0:x1]
-        currentNumber = getNumberByImage(numberImage)
+        currentNumber = getNumberByDirtImage(numberImage)
         if i == 0:
             number += currentNumber
             continue
@@ -38,7 +49,15 @@ def getLevelPercentage(barImage: Image, pixelsIndexesValues: List[tuple[int, int
     return 0
 
 
+def getNumberByDirtImage(numberImage: GrayImage) -> int:
+    return getNumberByImage(cleanBackgroundPixels(numberImage))
+
+
 def getNumberByImage(numberImage: GrayImage) -> int:
-    numberImage = cleanBackgroundGrayPixels(numberImage)
     numberImageHAsh = hashit(numberImage)
     return numbersImagesHashes.get(numberImageHAsh, 0)
+
+
+@cacheObjectPosition
+def getXpGainRateLabelPosition(image: Image) -> Optional[tuple[int, int, int, int]]:
+    return locate(image, images['labels']['xpGainRate'])
