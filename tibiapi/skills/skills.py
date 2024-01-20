@@ -48,7 +48,7 @@ class Skills:
         image = self.container.rectImage.image[y:y + 8, :][:, :, 0]
         return getFullNumberByImage(image, 4)
 
-    def getXpGainRate(self) -> Optional[int]:
+    def getXpGainRatePercentage(self) -> Optional[int]:
         if not self.container.isMaximized:
             return None
         pos = getXpGainRateLabelPosition(self.container.rectImage.image)
