@@ -1,0 +1,1 @@
+::: tibiapi.skills.Skills

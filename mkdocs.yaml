@@ -24,6 +24,8 @@ nav:
           - BattleList: api/battle-list/battle-list.md
           - Creature: api/battle-list/creature.md
           - TopBar: api/battle-list/top-bar.md
+      - Skills:
+          - Skills: api/skills/skills.md
       - StatusBar:
           - StatusBar: api/status-bar/status-bar.md
 plugins:
