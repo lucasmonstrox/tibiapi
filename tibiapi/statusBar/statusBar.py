@@ -9,8 +9,8 @@ class StatusBar:
 
     @cached_property
     def healthPercentage(self) -> int:
-        return healthPercentage(self.rectImage.image[5, 14:])
+        return healthPercentage(self.rectImage.image[5:6, 13:, :][0])
 
     @cached_property
     def manaPercentage(self) -> int:
-        return manaPercentage(self.rectImage.image[18, 14:])
+        return manaPercentage(self.rectImage.image[18:19, 13:, :][0])
