@@ -18,7 +18,6 @@ class Minimap:
         self.previousRadarImageHash = 0
         self.rectImage = rectImage
 
-    # TODO: add strategy hashing each coordinate
     def getCoordinate(self) -> Optional[tuple[int, int, int]]:
         radarImage = self.getRadarImage()
         if radarImage is None:
@@ -54,7 +53,6 @@ class Minimap:
         radarImage[56, 54] = 128
         radarImage[57, 53] = 128
         radarImage[57, 54] = 128
-        # TODO: next algorithm can be improved reducing area size to locate or hashing each displacement movement
         if self.previousCoordinate is not None:
             (previousCoordinateXPixel, previousCoordinateYPixel) = getPixelFromCoordinate(
                 self.previousCoordinate)
