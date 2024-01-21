@@ -1,7 +1,7 @@
 from numba import njit
 import numpy as np
 from typing import List, Optional
-from tibiapi._common.typings import GrayImage, Image
+from tibiapi._common.typings import BBox, GrayImage, Image
 from tibiapi.utils.image import cacheObjectPosition, hashit, locate
 from .config import images, numbersImagesHashes
 
@@ -59,5 +59,5 @@ def getNumberByImage(numberImage: GrayImage) -> int:
 
 
 @cacheObjectPosition
-def getXpGainRateLabelPosition(image: Image) -> Optional[tuple[int, int, int, int]]:
+def getXpGainRateLabelPosition(image: Image) -> Optional[BBox]:
     return locate(image, images['labels']['xpGainRate'])
