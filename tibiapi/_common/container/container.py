@@ -19,10 +19,5 @@ class Container:
 
     @cached_property
     def isMaximized(self) -> bool:
-        """
-        Check whether the container is maximized or minimized.
-
-        It will return True when container is maximized or False if it is minimized.
-        """
         pixel = self.topBar.maximizeOrMinimizeButton.image[4, 5]
         return pixel[0] != 192 and pixel[1] != 192 and pixel[2] != 192
