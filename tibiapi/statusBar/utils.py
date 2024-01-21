@@ -1,10 +1,11 @@
 from numba import njit
 from tibiapi._common.typings import Image
 from tibiapi.utils.color import isPixelColor
+from .typings import BarPercentage
 
 
 @njit(cache=True)
-def healthPercentage(bar: Image) -> int:
+def healthPercentage(bar: Image) -> BarPercentage:
     if isPixelColor(bar[93], (49, 46, 100)):
         return 100
     pixelColor = (79, 79, 219)
@@ -32,7 +33,7 @@ def healthPercentage(bar: Image) -> int:
 
 
 @njit(cache=True)
-def manaPercentage(bar: Image) -> int:
+def manaPercentage(bar: Image) -> BarPercentage:
     if isPixelColor(bar[93], (105, 45, 45)):
         return 100
     pixelColor = (218, 80, 83)
