@@ -21,7 +21,7 @@ See the full documentation in [https://tibiapi.readthedocs.io](https://tibiapi.r
 | Imbuements | ❌   |
 | Inventory  | ❌   |
 | Market     | ❌   |
-| Minimap    | ❌   |
+| Minimap    | 🚧   |
 | Options    | ❌   |
 | PartyList  | ❌   |
 | Skills     | 🚧   |
