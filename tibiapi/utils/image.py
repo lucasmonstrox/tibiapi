@@ -3,7 +3,7 @@ from farmhash import FarmHash64
 import numpy as np
 from PIL import Image as PilImage
 from typing import Callable, Optional
-from tibiapi._common.typings import Image
+from tibiapi._common.typings import BBox, Image
 
 
 def cacheObjectPosition(func: Callable) -> Callable:
@@ -13,7 +13,7 @@ def cacheObjectPosition(func: Callable) -> Callable:
     lastH = None
     lastImgHash = None
 
-    def inner(screenshot: Image) -> Optional[tuple[int, int, int, int]]:
+    def inner(screenshot: Image) -> Optional[BBox]:
         nonlocal lastX, lastY, lastW, lastH, lastImgHash
         if lastX != None and lastY != None and lastW != None and lastH != None:
             currentImage = np.ascontiguousarray(
@@ -43,7 +43,7 @@ def load(path: str) -> Image:
     return np.ascontiguousarray(bgraImage, dtype=np.uint8)
 
 
-def locate(compareImage: np.ndarray, img: np.ndarray, confidence: float = 0.85) -> Optional[tuple[int, int, int, int]]:
+def locate(compareImage: np.ndarray, img: np.ndarray, confidence: float = 0.85) -> Optional[BBox]:
     match = cv2.matchTemplate(compareImage, img, cv2.TM_CCOEFF_NORMED)
     res = cv2.minMaxLoc(match)
     if res[1] <= confidence:
