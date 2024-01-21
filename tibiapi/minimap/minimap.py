@@ -18,7 +18,7 @@ class Minimap:
         self.previousRadarImageHash = 0
         self.rectImage = rectImage
 
-    def getCoordinate(self) -> Optional[tuple[int, int, int]]:
+    def getCoordinate(self) -> Optional[Coordinate]:
         radarImage = self.getRadarImage()
         if radarImage is None:
             self.previousCoordinate = None
