@@ -66,6 +66,7 @@ pip install -e tibiapi
 
 - configure mypy
 - add benchmark tests
+- add commit hooks tool
 
 ## 👷 Authors
 
