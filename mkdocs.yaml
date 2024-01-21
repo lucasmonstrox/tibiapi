@@ -24,6 +24,8 @@ nav:
           - BattleList: api/battle-list/battle-list.md
           - Creature: api/battle-list/creature.md
           - TopBar: api/battle-list/top-bar.md
+      - Minimap:
+          - Minimap: api/minimap/minimap.md
       - Skills:
           - Skills: api/skills/skills.md
       - StatusBar:

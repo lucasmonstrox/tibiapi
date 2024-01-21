@@ -1,0 +1,1 @@
+::: tibiapi.minimap.Minimap
