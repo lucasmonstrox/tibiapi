@@ -33,26 +33,8 @@ class Minimap:
             self.previousCoordinate = None
             self.previousRadarImageHash = 0
             return self.previousCoordinate
-        radarImage[52, 53] = 128
-        radarImage[52, 54] = 128
-        radarImage[53, 53] = 128
-        radarImage[53, 54] = 128
-        radarImage[54, 51] = 128
-        radarImage[54, 52] = 128
-        radarImage[55, 51] = 128
-        radarImage[55, 52] = 128
-        radarImage[54, 53] = 128
-        radarImage[54, 54] = 128
-        radarImage[55, 53] = 128
-        radarImage[55, 54] = 128
-        radarImage[54, 55] = 128
-        radarImage[54, 56] = 128
-        radarImage[55, 55] = 128
-        radarImage[55, 56] = 128
-        radarImage[56, 53] = 128
-        radarImage[56, 54] = 128
-        radarImage[57, 53] = 128
-        radarImage[57, 54] = 128
+        radarImage[52:58, 53:55] = 128
+        radarImage[54:56, 51:57] = 128
         if self.previousCoordinate is not None:
             (previousCoordinateXPixel, previousCoordinateYPixel) = getPixelFromCoordinate(
                 self.previousCoordinate)
