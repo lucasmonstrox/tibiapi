@@ -3,6 +3,7 @@ from tibiapi._common.container import Container
 from tibiapi._common.rectImage import RectImage
 from tibiapi.utils.color import isPixelColor
 from .config import pixelsIndexesValues
+from .typings import BarPercentage
 from .utils import cleanColouredPixels, getFullNumberByImage, getLevelPercentage, getNumberByImage, getXpGainRateLabelPosition
 
 
@@ -31,7 +32,7 @@ class Skills:
             return None
         return getFullNumberByImage(self.container.rectImage.image[26:34, :][:, :, 1], 2)
 
-    def getLevelPercentage(self) -> Optional[int]:
+    def getLevelPercentage(self) -> Optional[BarPercentage]:
         if not self.levelPercentageBarIsOpen():
             return None
         return getLevelPercentage(self.container.rectImage.image[37:38, 10:154][0, :, 2], pixelsIndexesValues)
