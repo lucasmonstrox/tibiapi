@@ -1,11 +1,10 @@
 import numpy as np
 from typing import Optional
 from tibiapi._common.rectImage.rectImage import RectImage
-from tibiapi._common.typings import BBox, Image
 from tibiapi.utils.image import hashit, locate
 from .config import floorsLevelsImagesHashes, images
 from .typings import Coordinate
-from .utils import getCoordinateFromPixel, getPixelFromCoordinate, getRadarToolsPosition
+from .utils import getCoordinateFromPixel, getPixelFromCoordinate
 
 
 class Minimap:
@@ -19,11 +18,7 @@ class Minimap:
         self.rectImage = rectImage
 
     def getCoordinate(self) -> Optional[Coordinate]:
-        radarImage = self.getRadarImage()
-        if radarImage is None:
-            self.previousCoordinate = None
-            self.previousRadarImageHash = 0
-            return self.previousCoordinate
+        radarImage = self.rectImage.image[3:112, 9:115]
         radarImage = np.ascontiguousarray(radarImage)
         radarImageHash = hashit(radarImage)
         if self.previousRadarImageHash == radarImageHash:
@@ -71,27 +66,8 @@ class Minimap:
         self.previousRadarImageHash = radarImageHash
         return self.previousCoordinate
 
-    def getFloorLevel(self) -> Optional[int]:
-        radarToolsPosition = self.getRadarToolsPosition()
-        if radarToolsPosition is None:
-            return None
-        left, top, width, _ = radarToolsPosition
-        left = left + width + 8
-        top = top - 7
+    def getFloorLevel(self) -> int:
         floorLevelImage = np.ascontiguousarray(
-            self.rectImage.image[top:top + 67, left:left + 2])
+            self.rectImage.image[46:113, 154:156])
         floorLevelImageHash = hashit(floorLevelImage)
         return floorsLevelsImagesHashes.get(floorLevelImageHash, None)
-
-    def getRadarImage(self) -> Optional[Image]:
-        radarToolsPosition = self.getRadarToolsPosition()
-        if radarToolsPosition is None:
-            return None
-        x0 = radarToolsPosition[0] - 106 - 11
-        x1 = x0 + 106
-        y0 = radarToolsPosition[1] - 50
-        y1 = y0 + 109
-        return self.rectImage.image[y0:y1, x0:x1]
-
-    def getRadarToolsPosition(self) -> Optional[BBox]:
-        return getRadarToolsPosition(self.rectImage.image)
