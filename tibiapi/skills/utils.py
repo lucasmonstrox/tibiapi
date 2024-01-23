@@ -41,6 +41,11 @@ def getFullNumberByImage(image: GrayImage, times: int) -> int:
     return number
 
 
+@cacheObjectPosition
+def getHitPointsLabelPosition(image: Image) -> Optional[BBox]:
+    return locate(image, images['labels']['hitPoints'])
+
+
 @njit(cache=True)
 def getLevelPercentage(barImage: Image, pixelsIndexesValues: List[tuple[int, int]]) -> int:
     for pixelIndexValue in pixelsIndexesValues:
