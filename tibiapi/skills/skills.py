@@ -8,22 +8,6 @@ from .utils import cleanColouredPixels, getFullNumberByImage, getHitPointsLabelP
 
 
 class Skills:
-    cap: int
-    food: int
-    hp: int
-    mana: int
-    speed: int
-    stamina: int
-    offlineTraining: int
-    magic: int
-    fist: int
-    club: int
-    sword: int
-    axe: int
-    distance: int
-    shielding: int
-    fishing: int
-
     def __init__(self, rectImage: RectImage):
         self.container = Container(rectImage)
 
