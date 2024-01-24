@@ -24,6 +24,7 @@ images = {
         9: load(f'{digitsImagesPath}/9.png'),
     },
     'labels': {
+        'capacity': load(f'{labelsImagesPath}/capacity.png'),
         'hitPoints': load(f'{labelsImagesPath}/hitPoints.png'),
         'mana': load(f'{labelsImagesPath}/mana.png'),
         'xpGainRate': load(f'{labelsImagesPath}/xpGainRate.png'),
