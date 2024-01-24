@@ -65,7 +65,9 @@ pip install -e tibiapi
 ## ✅ TODO
 
 - configure mypy
-- add benchmark tests
+- add benchmark tests in low/high end computer
+- add linter
+- add formatter
 - add commit hooks tool
 
 ## 👷 Authors
