@@ -69,6 +69,7 @@ pip install -e tibiapi
 - add linter
 - add formatter
 - add commit hooks tool
+- deploy to pypi when new tag is detected
 
 ## 👷 Authors
 
