@@ -13,19 +13,19 @@ def loadSkillsByImage(imagePath: str) -> Skills:
 
 def test_should_return_None_when_skills_container_is_minimized():
     skills = loadSkillsByImage('skillsMinimized.png')
-    assert skills.getHitPoints() is None
+    assert skills.getMana() is None
 
 
-def test_should_return_None_when_hit_points_label_is_not_visible():
-    skills = loadSkillsByImage('hitPointsLabelNotVisible.png')
-    assert skills.getHitPoints() is None
+def test_should_return_None_when_mana_label_is_not_visible():
+    skills = loadSkillsByImage('manaLabelNotVisible.png')
+    assert skills.getMana() is None
 
 
-def test_should_return_155():
-    skills = loadSkillsByImage('hitPointsWith155.png')
-    assert skills.getHitPoints() == 155
+def test_should_return_150():
+    skills = loadSkillsByImage('manaWith150.png')
+    assert skills.getMana() == 150
 
 
-def test_should_return_193_865():
-    skills = loadSkillsByImage('hitPointsWith193865.png')
-    assert skills.getHitPoints() == 193_865
+def test_should_return_110_850():
+    skills = loadSkillsByImage('manaWith110850.png')
+    assert skills.getMana() == 110_850
