@@ -54,6 +54,11 @@ def getLevelPercentage(barImage: Image, pixelsIndexesValues: List[tuple[int, int
     return 0
 
 
+@cacheObjectPosition
+def getManaLabelPosition(image: Image) -> Optional[BBox]:
+    return locate(image, images['labels']['mana'])
+
+
 def getNumberByDirtImage(numberImage: GrayImage) -> int:
     return getNumberByImage(cleanBackgroundPixels(numberImage))
 
