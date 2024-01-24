@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tibiapi"
-version = "0.7.0"
+version = "0.8.0"
 description = ""
 authors = ["lucasmonstrox <joao.galiano.silva@gmail.com>"]
 readme = "README.md"
