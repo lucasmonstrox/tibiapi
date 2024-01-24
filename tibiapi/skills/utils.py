@@ -27,6 +27,11 @@ def cleanColouredPixels(image: GrayImage) -> GrayImage:
     return zeros
 
 
+@cacheObjectPosition
+def getCapacityLabelPosition(image: Image) -> Optional[BBox]:
+    return locate(image, images['labels']['capacity'])
+
+
 def getFullNumberByImage(image: GrayImage, times: int) -> int:
     number = 0
     numbersImagesIndexes = [[132, 154], [104, 126], [76, 98], [48, 70]]

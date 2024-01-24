@@ -1,8 +1,4 @@
 from numba import njit
-from typing import Optional
-from tibiapi._common.typings import BBox, Image
-from tibiapi.utils.image import cacheObjectPosition, locate
-from .config import images
 from .typings import Coordinate, PixelCoordinate
 
 
