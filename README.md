@@ -5,7 +5,7 @@
 [![Documentation Status](https://readthedocs.org/projects/tibiapi/badge/?version=latest)](https://tibiapi.readthedocs.io/en/latest/)
 [![PyPI version](https://badge.fury.io/py/tibiapi.svg)](https://badge.fury.io/py/tibiapi)
 
-> Fastest Tibia API made in [Python](https://www.python.org/downloads/release/python-3117).
+> Fastest Tibia Client API made in [Python](https://www.python.org/downloads/release/python-3117).
 
 See the full documentation in [https://tibiapi.readthedocs.io](https://tibiapi.readthedocs.io).
 
