@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "tibiapi"
 version = "0.11.0"
-description = "Tibia API"
+description = "Tibia Client API"
 authors = ["lucasmonstrox <joao.galiano.silva@gmail.com>"]
 readme = "README.md"
 license = "MIT"
