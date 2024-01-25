@@ -74,5 +74,10 @@ def getNumberByImage(numberImage: GrayImage) -> int:
 
 
 @cacheObjectPosition
+def getSoulPointsLabelPosition(image: Image) -> Optional[BBox]:
+    return locate(image, images['labels']['soulPoints'])
+
+
+@cacheObjectPosition
 def getXpGainRateLabelPosition(image: Image) -> Optional[BBox]:
     return locate(image, images['labels']['xpGainRate'])

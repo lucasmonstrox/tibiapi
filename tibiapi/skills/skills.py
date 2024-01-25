@@ -4,7 +4,7 @@ from tibiapi._common.rectImage import RectImage
 from tibiapi.utils.color import isPixelColor
 from .config import pixelsIndexesValues
 from .typings import BarPercentage
-from .utils import cleanColouredPixels, getCapacityLabelPosition, getFullNumberByImage, getHitPointsLabelPosition, getLevelPercentage, getManaLabelPosition, getNumberByImage, getXpGainRateLabelPosition
+from .utils import cleanColouredPixels, getCapacityLabelPosition, getFullNumberByImage, getHitPointsLabelPosition, getLevelPercentage, getManaLabelPosition, getNumberByImage, getSoulPointsLabelPosition, getXpGainRateLabelPosition
 
 
 class Skills:
@@ -53,6 +53,16 @@ class Skills:
         if pos is None:
             return None
         dirtNumberImage = self.container.rectImage.image[pos[1]:pos[1] + 8, :][:, :, 1]
+        return getFullNumberByImage(dirtNumberImage, 2)
+
+    def getSoulPoints(self) -> Optional[int]:
+        if not self.container.isMaximized:
+            return None
+        pos = getSoulPointsLabelPosition(self.container.rectImage.image)
+        if pos is None:
+            return None
+        dirtNumberImage = self.container.rectImage.image[pos[1]
+            :pos[1] + 8, :][:, :, 1]
         return getFullNumberByImage(dirtNumberImage, 2)
 
     def getXp(self) -> Optional[int]:
