@@ -79,5 +79,10 @@ def getSoulPointsLabelPosition(image: Image) -> Optional[BBox]:
 
 
 @cacheObjectPosition
+def getSpeedLabelPosition(image: Image) -> Optional[BBox]:
+    return locate(image, images['labels']['speed'])
+
+
+@cacheObjectPosition
 def getXpGainRateLabelPosition(image: Image) -> Optional[BBox]:
     return locate(image, images['labels']['xpGainRate'])
