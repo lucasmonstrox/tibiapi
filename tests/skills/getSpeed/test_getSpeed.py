@@ -13,14 +13,19 @@ def loadSkillsByImage(imagePath: str) -> Skills:
 
 def test_should_return_None_when_skills_container_is_minimized():
     skills = loadSkillsByImage('skillsMinimized.png')
-    assert skills.getSoulPoints() is None
+    assert skills.getSpeed() is None
 
 
 def test_should_return_None_when_soul_points_label_is_not_visible():
-    skills = loadSkillsByImage('soulPointsLabelNotVisible.png')
-    assert skills.getSoulPoints() is None
+    skills = loadSkillsByImage('speedLabelNotVisible.png')
+    assert skills.getSpeed() is None
 
 
-def test_should_return_200():
-    skills = loadSkillsByImage('soulPointsWith200.png')
-    assert skills.getSoulPoints() == 200
+def test_should_return_729():
+    skills = loadSkillsByImage('speedWith729.png')
+    assert skills.getSpeed() == 729
+
+
+def test_should_return_65535():
+    skills = loadSkillsByImage('speedWith65535.png')
+    assert skills.getSpeed() == 65_535
