@@ -21,11 +21,31 @@ def test_should_return_None_when_soul_points_label_is_not_visible():
     assert skills.getSpeed() is None
 
 
-def test_should_return_729():
-    skills = loadSkillsByImage('speedWith729.png')
+def test_should_return_729_when_gray_color():
+    skills = loadSkillsByImage('speedWith729AndGreenColor.png')
     assert skills.getSpeed() == 729
 
 
-def test_should_return_65535():
-    skills = loadSkillsByImage('speedWith65535.png')
+def test_should_return_729_when_green_color():
+    skills = loadSkillsByImage('speedWith729AndGrayColor.png')
+    assert skills.getSpeed() == 729
+
+
+def test_should_return_729_when_orange_color():
+    skills = loadSkillsByImage('speedWith729AndOrangeColor.png')
+    assert skills.getSpeed() == 729
+
+
+def test_should_return_65535_when_gray_color():
+    skills = loadSkillsByImage('speedWith65535AndGrayColor.png')
+    assert skills.getSpeed() == 65_535
+
+
+def test_should_return_65535_when_green_color():
+    skills = loadSkillsByImage('speedWith65535AndGreenColor.png')
+    assert skills.getSpeed() == 65_535
+
+
+def test_should_return_65535_when_orange_color():
+    skills = loadSkillsByImage('speedWith65535AndOrangeColor.png')
     assert skills.getSpeed() == 65_535

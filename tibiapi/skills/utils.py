@@ -11,7 +11,8 @@ def cleanBackgroundPixels(image: GrayImage) -> GrayImage:
     zeros = np.zeros((8, 22), dtype=np.uint8)
     for y in range(len(image)):
         for x in range(len(image[0])):
-            if image[y, x] == 192:
+            pixelColor = image[y, x]
+            if pixelColor == 192 or pixelColor == 173 or pixelColor == 152:
                 zeros[y, x] = 192
     return zeros
 
@@ -38,7 +39,7 @@ def getFullNumberByImage(image: GrayImage, times: int) -> int:
     for i in range(times):
         x0, x1 = numbersImagesIndexes[i]
         numberImage = image[:, x0:x1]
-        currentNumber = getNumberByDirtImage(numberImage)
+        currentNumber = getNumberByImage(cleanBackgroundPixels(numberImage))
         if i == 0:
             number += currentNumber
             continue
@@ -62,10 +63,6 @@ def getLevelPercentage(barImage: Image, pixelsIndexesValues: List[tuple[int, int
 @cacheObjectPosition
 def getManaLabelPosition(image: Image) -> Optional[BBox]:
     return locate(image, images['labels']['mana'])
-
-
-def getNumberByDirtImage(numberImage: GrayImage) -> int:
-    return getNumberByImage(cleanBackgroundPixels(numberImage))
 
 
 def getNumberByImage(numberImage: GrayImage) -> int:

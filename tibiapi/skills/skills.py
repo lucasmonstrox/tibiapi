@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Callable, Optional
 from tibiapi._common.container import Container
 from tibiapi._common.rectImage import RectImage
 from tibiapi.utils.color import isPixelColor
@@ -17,8 +17,7 @@ class Skills:
         pos = getCapacityLabelPosition(self.container.rectImage.image)
         if pos is None:
             return None
-        dirtNumberImage = self.container.rectImage.image[pos[1]
-            :pos[1] + 8, :][:, :, 1]
+        dirtNumberImage = self.container.rectImage.image[pos[1]                                                         :pos[1] + 8, :][:, :, 1]
         return getFullNumberByImage(dirtNumberImage, 2)
 
     def getHitPoints(self) -> Optional[int]:
@@ -27,8 +26,7 @@ class Skills:
         pos = getHitPointsLabelPosition(self.container.rectImage.image)
         if pos is None:
             return None
-        dirtNumberImage = self.container.rectImage.image[pos[1]
-            :pos[1] + 8, :][:, :, 1]
+        dirtNumberImage = self.container.rectImage.image[pos[1]                                                         :pos[1] + 8, :][:, :, 1]
         return getFullNumberByImage(dirtNumberImage, 2)
 
     def getLevel(self) -> Optional[int]:
@@ -52,7 +50,8 @@ class Skills:
         pos = getManaLabelPosition(self.container.rectImage.image)
         if pos is None:
             return None
-        dirtNumberImage = self.container.rectImage.image[pos[1]:pos[1] + 8, :][:, :, 1]
+        dirtNumberImage = self.container.rectImage.image[pos[1]
+            :pos[1] + 8, :][:, :, 1]
         return getFullNumberByImage(dirtNumberImage, 2)
 
     def getSoulPoints(self) -> Optional[int]:
@@ -61,19 +60,11 @@ class Skills:
         pos = getSoulPointsLabelPosition(self.container.rectImage.image)
         if pos is None:
             return None
-        dirtNumberImage = self.container.rectImage.image[pos[1]
-            :pos[1] + 8, :][:, :, 1]
+        dirtNumberImage = self.container.rectImage.image[pos[1]                                                         :pos[1] + 8, :][:, :, 1]
         return getFullNumberByImage(dirtNumberImage, 2)
 
     def getSpeed(self) -> Optional[int]:
-        if not self.container.isMaximized:
-            return None
-        pos = getSpeedLabelPosition(self.container.rectImage.image)
-        if pos is None:
-            return None
-        dirtNumberImage = self.container.rectImage.image[pos[1]
-            :pos[1] + 8, :][:, :, 1]
-        return getFullNumberByImage(dirtNumberImage, 2)
+        return self.getNumberByTimes(getSpeedLabelPosition, 2)
 
     def getXp(self) -> Optional[int]:
         if not self.container.isMaximized:
@@ -88,7 +79,15 @@ class Skills:
         pos = getXpGainRateLabelPosition(self.container.rectImage.image)
         if pos is None:
             return None
-        dirtNumberImage = self.container.rectImage.image[pos[1]
-            :pos[1] + 8, 118:140][:, :, 1]
+        dirtNumberImage = self.container.rectImage.image[pos[1]                                                         :pos[1] + 8, 118:140][:, :, 1]
         numberImage = cleanColouredPixels(dirtNumberImage)
         return getNumberByImage(numberImage)
+
+    def getNumberByTimes(self, cb: Callable, times: int) -> Optional[int]:
+        if not self.container.isMaximized:
+            return None
+        pos = cb(self.container.rectImage.image)
+        if pos is None:
+            return None
+        dirtNumberImage = self.container.rectImage.image[pos[1]:pos[1] + 8, :][:, :, 1]
+        return getFullNumberByImage(dirtNumberImage, times)
