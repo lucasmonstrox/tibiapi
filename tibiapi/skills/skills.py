@@ -12,13 +12,7 @@ class Skills:
         self.container = Container(rectImage)
 
     def getCapacity(self) -> Optional[int]:
-        if not self.container.isMaximized:
-            return None
-        pos = getCapacityLabelPosition(self.container.rectImage.image)
-        if pos is None:
-            return None
-        dirtNumberImage = self.container.rectImage.image[pos[1]                                                         :pos[1] + 8, :][:, :, 1]
-        return getFullNumberByImage(dirtNumberImage, 2)
+        return self.getNumberByTimes(getCapacityLabelPosition, 2)
 
     def getHitPoints(self) -> Optional[int]:
         if not self.container.isMaximized:
