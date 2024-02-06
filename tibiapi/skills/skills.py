@@ -4,7 +4,7 @@ from tibiapi._common.rectImage import RectImage
 from tibiapi.utils.color import isPixelColor
 from .config import pixelsIndexesValues
 from .typings import BarPercentage
-from .utils import cleanColouredPixels, getCapacityLabelPosition, getFullNumberByImage, getHitPointsLabelPosition, getLevelPercentage, getManaLabelPosition, getNumberByImage, getSoulPointsLabelPosition, getSpeedLabelPosition, getXpGainRateLabelPosition
+from .utils import cleanColouredPixels, getCapacityLabelPosition, getFullNumberByImage, getHitPointsLabelPosition, getLevelLabelPosition, getLevelPercentage, getManaLabelPosition, getNumberByImage, getSoulPointsLabelPosition, getSpeedLabelPosition, getXpGainRateLabelPosition
 
 
 class Skills:
@@ -15,18 +15,10 @@ class Skills:
         return self.getNumberByTimes(getCapacityLabelPosition, 2)
 
     def getHitPoints(self) -> Optional[int]:
-        if not self.container.isMaximized:
-            return None
-        pos = getHitPointsLabelPosition(self.container.rectImage.image)
-        if pos is None:
-            return None
-        dirtNumberImage = self.container.rectImage.image[pos[1]                                                         :pos[1] + 8, :][:, :, 1]
-        return getFullNumberByImage(dirtNumberImage, 2)
+        return self.getNumberByTimes(getHitPointsLabelPosition, 2)
 
     def getLevel(self) -> Optional[int]:
-        if not self.container.isMaximized:
-            return None
-        return getFullNumberByImage(self.container.rectImage.image[26:34, :][:, :, 1], 2)
+        return self.getNumberByTimes(getLevelLabelPosition, 2)
 
     def getLevelPercentage(self) -> Optional[BarPercentage]:
         if not self.levelPercentageBarIsOpen():
@@ -39,23 +31,10 @@ class Skills:
         return isPixelColor(self.container.rectImage.image[36, 9], (0, 0, 0))
 
     def getMana(self) -> Optional[int]:
-        if not self.container.isMaximized:
-            return None
-        pos = getManaLabelPosition(self.container.rectImage.image)
-        if pos is None:
-            return None
-        dirtNumberImage = self.container.rectImage.image[pos[1]
-            :pos[1] + 8, :][:, :, 1]
-        return getFullNumberByImage(dirtNumberImage, 2)
+        return self.getNumberByTimes(getManaLabelPosition, 2)
 
     def getSoulPoints(self) -> Optional[int]:
-        if not self.container.isMaximized:
-            return None
-        pos = getSoulPointsLabelPosition(self.container.rectImage.image)
-        if pos is None:
-            return None
-        dirtNumberImage = self.container.rectImage.image[pos[1]                                                         :pos[1] + 8, :][:, :, 1]
-        return getFullNumberByImage(dirtNumberImage, 2)
+        return self.getNumberByTimes(getSoulPointsLabelPosition, 1)
 
     def getSpeed(self) -> Optional[int]:
         return self.getNumberByTimes(getSpeedLabelPosition, 2)

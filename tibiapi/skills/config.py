@@ -26,6 +26,7 @@ images = {
     'labels': {
         'capacity': load(f'{labelsImagesPath}/capacity.png'),
         'hitPoints': load(f'{labelsImagesPath}/hitPoints.png'),
+        'level': load(f'{labelsImagesPath}/level.png'),
         'mana': load(f'{labelsImagesPath}/mana.png'),
         'soulPoints': load(f'{labelsImagesPath}/soulPoints.png'),
         'speed': load(f'{labelsImagesPath}/speed.png'),
