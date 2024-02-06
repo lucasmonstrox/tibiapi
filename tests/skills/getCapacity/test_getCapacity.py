@@ -21,11 +21,31 @@ def test_should_return_None_when_capacity_label_is_not_visible():
     assert skills.getCapacity() is None
 
 
-def test_should_return_327():
-    skills = loadSkillsByImage('capacityWith327.png')
+def test_should_return_327_when_gray_color():
+    skills = loadSkillsByImage('capacityWith327AndGrayColor.png')
     assert skills.getCapacity() == 327
 
 
-def test_should_return_318_218():
-    skills = loadSkillsByImage('capacityWith318218.png')
+def test_should_return_327_when_green_color():
+    skills = loadSkillsByImage('capacityWith327AndGreenColor.png')
+    assert skills.getCapacity() == 327
+
+
+def test_should_return_327_when_orange_color():
+    skills = loadSkillsByImage('capacityWith327AndOrangeColor.png')
+    assert skills.getCapacity() == 327
+
+
+def test_should_return_318_218_when_gray_color():
+    skills = loadSkillsByImage('capacityWith318218AndGrayColor.png')
+    assert skills.getCapacity() == 318_218
+
+
+def test_should_return_318_218_when_green_color():
+    skills = loadSkillsByImage('capacityWith318218AndGreenColor.png')
+    assert skills.getCapacity() == 318_218
+
+
+def test_should_return_318_218_when_orange_color():
+    skills = loadSkillsByImage('capacityWith318218AndOrangeColor.png')
     assert skills.getCapacity() == 318_218
